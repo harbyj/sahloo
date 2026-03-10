@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /cdn-cgi/
+
+Sitemap: https://sahloo.com/sitemap.xml
+Host: https://sahloo.com
