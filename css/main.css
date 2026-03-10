@@ -99,7 +99,7 @@ ul, ol { list-style: none; }
   }
 }
 
-/* ── Base ────────────────────────────────────── */
+/* ── Base ───────────────────────────────────── */
 body {
   font-family: 'Tajawal', 'Inter', sans-serif;
   background: var(--bg);
