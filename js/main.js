@@ -1,4 +1,4 @@
-/* Sahloo — main.js v2 */
+/* Sahloo — main.min.js v2 */
 'use strict';
 
 // ── Dark Mode ──────────────────────────────────────────
