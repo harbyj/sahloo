@@ -1,241 +1,346 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <url>
     <loc>https://sahloo.com/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/"/>
   </url>
-  <url>
-    <loc>https://sahloo.com/tools/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/"/>
-  </url>
+
   <url>
     <loc>https://sahloo.com/en/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/"/>
   </url>
+
+  <url>
+    <loc>https://sahloo.com/tools/</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/"/>
+  </url>
+
   <url>
     <loc>https://sahloo.com/en/tools/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/tools/percentage-calculator/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/percentage-calculator/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/percentage-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/percentage-calculator/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/en/tools/percentage-calculator/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/percentage-calculator/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/percentage-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/percentage-calculator/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/tools/age-calculator/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/age-calculator/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/age-calculator/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/en/tools/age-calculator/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/age-calculator/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/age-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/age-calculator/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/tools/zakat-calculator/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/zakat-calculator/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/zakat-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/zakat-calculator/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/en/tools/zakat-calculator/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/zakat-calculator/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/zakat-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/zakat-calculator/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/tools/currency-converter/</loc>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/currency-converter/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/currency-converter/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/en/tools/currency-converter/</loc>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/currency-converter/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/currency-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/currency-converter/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/tools/loan-calculator/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/loan-calculator/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/loan-calculator/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/en/tools/loan-calculator/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/loan-calculator/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/loan-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/loan-calculator/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/tools/date-difference/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/date-difference/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/date-difference/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/date-difference/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/en/tools/date-difference/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/date-difference/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/date-difference/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/date-difference/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/tools/discount-calculator/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/discount-calculator/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/discount-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/discount-calculator/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/en/tools/discount-calculator/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/discount-calculator/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/discount-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/discount-calculator/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/tools/bmi-calculator/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/bmi-calculator/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/bmi-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/bmi-calculator/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/en/tools/bmi-calculator/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/bmi-calculator/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/bmi-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/bmi-calculator/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/tools/bill-splitter/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/bill-splitter/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/bill-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/bill-splitter/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/en/tools/bill-splitter/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/bill-splitter/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/bill-splitter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/bill-splitter/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/tools/unit-converter/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/unit-converter/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/unit-converter/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/en/tools/unit-converter/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/unit-converter/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/unit-converter/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/unit-converter/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/tools/gpa-calculator/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/gpa-calculator/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/gpa-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/gpa-calculator/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/en/tools/gpa-calculator/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/gpa-calculator/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/gpa-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/gpa-calculator/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/tools/days-until/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/days-until/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/days-until/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/days-until/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/en/tools/days-until/</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/tools/days-until/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/tools/days-until/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/tools/days-until/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/privacy/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/privacy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/privacy/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/en/privacy/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/privacy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/privacy/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/contact/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/contact/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/contact/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/en/contact/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/contact/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/contact/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/support/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/support/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/support/"/>
   </url>
+
   <url>
     <loc>https://sahloo.com/en/support/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://sahloo.com/support/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://sahloo.com/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sahloo.com/support/"/>
   </url>
+
 </urlset>
