@@ -20,7 +20,7 @@ import Layout from '../../../layouts/Layout.astro';
       <div class="form-group"><label class="form-label" for="cEmail">Email Address</label><input type="email" class="form-input" id="cEmail" required autocomplete="email"></div>
       <div class="form-group"><label class="form-label" for="cSubj">Subject</label><select class="form-select" id="cSubj"><option>Bug Report</option><option>Feedback</option><option>Tool Request</option><option>Other</option></select></div>
       <div class="form-group"><label class="form-label" for="cMsg">Message</label><textarea class="form-input" id="cMsg" rows="5" style="min-height:120px;resize:vertical;" required></textarea></div>
-      <button class="btn btn-primary btn-full" id="sendBtn">Send Message →</button>
+      <button class="btn btn-primary btn-full" onclick="sendMsg()">Send Message →</button>
       <div class="success-msg" id="okMsg">✅ Message sent! We'll get back to you soon.</div>
     </div>
     <div class="calc-card" style="margin-top:24px;">
@@ -32,20 +32,15 @@ import Layout from '../../../layouts/Layout.astro';
     </ul></div>
   </div>
 </main>
-</Layout>
-
-    <script>
-      function sendMsg() {
-  const name = (document.getElementById('cName') as HTMLInputElement)?.value.trim();
-  const email = (document.getElementById('cEmail') as HTMLInputElement)?.value.trim();
-  const msg = (document.getElementById('cMsg') as HTMLTextAreaElement)?.value.trim();
-  const okMsg = document.getElementById('okMsg');
-
-  if (!name || !email || !msg || !okMsg) return;
-
-  okMsg.classList.add('show');
-  setTimeout(() => okMsg.classList.remove('show'), 5000);
+<script is:inline>
+function sendMsg(){
+  const name=document.getElementById('cName').value;
+  const email=document.getElementById('cEmail').value;
+  const msg=document.getElementById('cMsg').value;
+  if(!name||!email||!msg)return;
+  // In production, send to your backend/email service
+  document.getElementById('okMsg').classList.add('show');
+  setTimeout(()=>document.getElementById('okMsg').classList.remove('show'),5000);
 }
-
-document.getElementById('sendBtn')?.addEventListener('click', sendMsg);
-    </script>
+</script>
+</Layout>
