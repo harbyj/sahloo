@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  lang="ar"
+  title="تحويل الوحدات | Sahloo سهلو"
+  description="محول الوحدات المجاني — الطول والوزن والحرارة والمساحة والسرعة والحجم."
+  canonical="https://sahloo.com/tools/unit-converter/"
+>
+<main id="main" class="tool-page">
+  <div class="tool-hero"><div class="container--n container">
+    <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">الرئيسية</a><span class="bc-sep" aria-hidden="true">›</span><a href="/tools/">الأدوات</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">تحويل الوحدات</span></nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://sahloo.com/"}, {"@type": "ListItem", "position": 2, "name": "الأدوات", "item": "https://sahloo.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "تحويل الوحدات"}]}</script>
+    <div class="tool-hero-content">
+      <div class="tool-page-icon" aria-hidden="true">📐</div>
+      <h1 class="tool-page-title">تحويل الوحدات</h1>
+      <p class="tool-page-sub">تحويل وحدات الطول والوزن والحرارة والمساحة</p>
+    </div>
+  </div></div>
+  <div class="container--n container" style="padding-top:24px;">
+    <div class="calc-card">
+      <div class="mode-tabs" role="tablist" style="flex-wrap:wrap;"><button class="mode-tab  active" onclick="setUT('length',this)">📏 الطول</button><button class="mode-tab" onclick="setUT('weight',this)">⚖️ الوزن</button><button class="mode-tab" onclick="setUT('temp',this)">🌡️ الحرارة</button><button class="mode-tab" onclick="setUT('area',this)">📐 المساحة</button><button class="mode-tab" onclick="setUT('speed',this)">💨 السرعة</button><button class="mode-tab" onclick="setUT('volume',this)">🫙 الحجم</button></div>
+      <div class="form-group"><label class="form-label" for="uVal">القيمة</label><input type="number" inputmode="decimal" class="form-input" id="uVal" placeholder="1" oninput="convertUnit()"></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label" for="uFrom">من</label><select class="form-select" id="uFrom" onchange="convertUnit()"></select></div>
+        <div class="form-group"><label class="form-label" for="uTo">إلى</label><select class="form-select" id="uTo" onchange="convertUnit()"></select></div>
+      </div>
+      <div class="result-card show" id="uRes" aria-live="polite">
+        <div class="result-label">النتيجة</div>
+        <div class="result-value" id="uVal2">أدخل قيمة</div>
+        <div class="result-sub" id="uSub"></div>
+      </div>
+    </div>
+    <div class="info-section"><div class="info-card"><h2>📐 أنواع الوحدات المدعومة</h2>
+<ul><li><strong>الطول:</strong> ملم، سم، م، كم، إنش، قدم، ياردة، ميل</li>
+<li><strong>الوزن:</strong> ملغ، غرام، كغ، طن، أونصة، رطل</li>
+<li><strong>الحرارة:</strong> مئوية، فهرنهايت، كلفن</li>
+<li><strong>المساحة:</strong> م²، كم²، هكتار، فدان، قدم²</li>
+<li><strong>السرعة:</strong> كم/س، ميل/س، م/ث، عقدة</li>
+<li><strong>الحجم:</strong> مل، لتر، م³، أوقية، كوب، غالون</li></ul></div><div class="info-card" itemscope itemtype="https://schema.org/FAQPage"><h2>❓ أسئلة شائعة</h2><div class="faq-list"><div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa0" itemprop="name">كم متراً في الميل؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa0" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">1 ميل = 1,609.344 متر.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa1" itemprop="name">كيف أحول درجات مئوية إلى فهرنهايت؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">°F = (°C × 9/5) + 32. مثال: 25°C = 77°F.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa2" itemprop="name">كم كيلوغرام في الرطل؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">1 رطل = 0.453592 كغ. أي 1 كغ = 2.204 رطل.</span></div></div>
+</div></div>
+</div>
+  </div>
+  <section class="related-section container--n container" aria-label="أدوات مشابهة"><div class="section-hd"><h2 class="section-title">أدوات مشابهة</h2><a href="/tools/" class="see-all">جميع الأدوات</a></div><div class="tools-grid"><a href="/tools/percentage-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">📊</div><div class="tool-name">حاسبة النسبة المئوية</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/age-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🎂</div><div class="tool-name">حساب العمر</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/zakat-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🌙</div><div class="tool-name">حاسبة الزكاة</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/currency-converter/" class="tool-card"><div class="tool-icon" aria-hidden="true">💱</div><div class="tool-name">تحويل العملات</div><div class="tool-arrow" aria-hidden="true">←</div></a></div></section>
+</main>
+
+<script is:inline>
+const UD={"length": {"units": [["mm", "ملم"], ["cm", "سم"], ["m", "متر"], ["km", "كيلومتر"], ["in", "إنش"], ["ft", "قدم"], ["yd", "ياردة"], ["mi", "ميل"]], "base": {"mm": 0.001, "cm": 0.01, "m": 1, "km": 1000, "in": 0.0254, "ft": 0.3048, "yd": 0.9144, "mi": 1609.344}}, "weight": {"units": [["mg", "ملغ"], ["g", "غرام"], ["kg", "كيلوغرام"], ["t", "طن"], ["oz", "أونصة"], ["lb", "رطل"]], "base": {"mg": 1e-06, "g": 0.001, "kg": 1, "t": 1000, "oz": 0.028349, "lb": 0.453592}}, "temp": {"units": [["c", "مئوية"], ["f", "فهرنهايت"], ["k", "كلفن"]], "base": null}, "area": {"units": [["m2", "متر مربع"], ["km2", "كم مربع"], ["ha", "هكتار"], ["ac", "فدان"], ["ft2", "قدم مربع"]], "base": {"m2": 1, "km2": 1000000.0, "ha": 10000.0, "ac": 4046.86, "ft2": 0.0929}}, "speed": {"units": [["kmh", "كم/س"], ["mph", "ميل/س"], ["ms", "م/ث"], ["kn", "عقدة"]], "base": {"kmh": 1, "mph": 1.60934, "ms": 3.6, "kn": 1.852}}, "volume": {"units": [["ml", "مل"], ["l", "لتر"], ["m3", "متر مكعب"], ["floz", "أوقية سائلة"], ["cup", "كوب"], ["gal", "غالون"]], "base": {"ml": 0.001, "l": 1, "m3": 1000, "floz": 0.029574, "cup": 0.236588, "gal": 3.78541}}};
+let _uMode='length';
+function setUT(mode,btn){
+  _uMode=mode;
+  document.querySelectorAll('.mode-tab').forEach((b,i)=>b.classList.toggle('active',b===btn));
+  populateSelects();
+  convertUnit();
+}
+function populateSelects(){
+  const d=UD[_uMode];
+  const mkOpts=(sel,selIdx)=>{
+    sel.innerHTML=d.units.map(([v,l],i)=>`<option value="${v}"${i===selIdx?' selected':''}>${l}</option>`).join('');
+  };
+  mkOpts(document.getElementById('uFrom'),0);
+  mkOpts(document.getElementById('uTo'),1);
+}
+function convertUnit(){
+  const val=+document.getElementById('uVal').value;
+  const fr=document.getElementById('uFrom').value;
+  const to=document.getElementById('uTo').value;
+  if(document.getElementById('uVal').value===''){document.getElementById('uVal2').textContent='أدخل قيمة';return;}
+  let result;
+  if(_uMode==='temp'){
+    if(fr==='c')result=to==='f'?val*9/5+32:to==='k'?val+273.15:val;
+    else if(fr==='f'){const c=(val-32)*5/9;result=to==='c'?c:to==='k'?c+273.15:val;}
+    else{const c=val-273.15;result=to==='c'?c:to==='f'?c*9/5+32:val;}
+  }else{
+    const tb=UD[_uMode].base;
+    result=(val*tb[fr])/tb[to];
+  }
+  const fmt=Math.abs(result)>=0.001?new Intl.NumberFormat('ar-SA',{maximumFractionDigits:6}).format(result):result.toExponential(4);
+  document.getElementById('uVal2').textContent=fmt;
+  document.getElementById('uSub').textContent=new Intl.NumberFormat('ar-SA').format(val)+' '+fr+' = '+fmt+' '+to;
+}
+populateSelects();
+</script>
+
+</Layout>

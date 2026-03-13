@@ -1,0 +1,69 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout
+  lang="en"
+  title="Bill Splitter | Sahloo سهلو"
+  description="Free bill splitter — divide restaurant bills equally among friends including tip."
+  canonical="https://sahloo.com/en/tools/bill-splitter/"
+>
+<main id="main" class="tool-page">
+  <div class="tool-hero"><div class="container--n container">
+    <nav class="breadcrumb" aria-label="breadcrumb"><a href="#" class="lang-switch">Home</a><span class="bc-sep" aria-hidden="true">›</span><a href="/en/tools/">Tools</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">Bill Splitter</span></nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sahloo.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://sahloo.com/en/tools/"}, {"@type": "ListItem", "position": 3, "name": "Bill Splitter"}]}</script>
+    <div class="tool-hero-content">
+      <div class="tool-page-icon" aria-hidden="true">🧾</div>
+      <h1 class="tool-page-title">Bill Splitter</h1>
+      <p class="tool-page-sub">Split the bill with friends, including tip</p>
+    </div>
+  </div></div>
+  <div class="container--n container" style="padding-top:24px;">
+    <div class="calc-card">
+      <div class="form-group"><label class="form-label" for="bT">Total Bill</label><input type="number" inputmode="decimal" class="form-input" id="bT" placeholder="250"></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label" for="bP">Number of People</label><input type="number" inputmode="numeric" class="form-input" id="bP" placeholder="4" min="1" value="2"></div>
+        <div class="form-group"><label class="form-label" for="bTp">Tip %</label>
+          <select class="form-select" id="bTp">
+            <option value="0">0% — No tip</option>
+            <option value="10" selected>10%</option>
+            <option value="15">15%</option>
+            <option value="20">20%</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-full" onclick="calcBill()">Split Bill →</button>
+      <div class="result-card" id="bRes" aria-live="polite">
+        <div class="result-grid">
+          <div class="result-item"><div class="val" id="bPer">0</div><div class="lbl">Per Person</div></div>
+          <div class="result-item"><div class="val" id="bTipA">0</div><div class="lbl">Tip Amount</div></div>
+          <div class="result-item"><div class="val" id="bGrand">0</div><div class="lbl">Grand Total</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="info-section"><div class="info-card"><h2>🧾 About the Bill Splitter</h2>
+<p>After a great meal the question always comes: "How much does each person owe?" This tool instantly calculates the fair share per person, with or without a tip.</p></div>
+<div class="info-card"><h2>💡 Tipping Guide</h2>
+<ul><li>10% — Satisfactory service</li><li>15% — Good service</li><li>20% — Excellent service</li>
+<li>Some restaurants add a service charge automatically — check your bill before tipping!</li></ul></div><div class="info-card" itemscope itemtype="https://schema.org/FAQPage"><h2>❓ FAQ</h2><div class="faq-list"><div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa0" itemprop="name">How is tip calculated?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa0" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">Tip = Bill × Tip% / 100, then divided equally per person.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa1" itemprop="name">What is a standard tip?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">Arab countries: 10–15%. US: 15–20%. Europe: 5–10% or none.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa2" itemprop="name">Can I split unevenly?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">This tool splits equally. Enter each person's sub-total separately for custom splits.</span></div></div>
+</div></div></div>  </div>
+  <section class="related-section container--n container" aria-label="Related Tools"><div class="section-hd"><h2 class="section-title">Related Tools</h2><a href="/en/tools/" class="see-all">All Tools</a></div><div class="tools-grid"><a href="/en/tools/percentage-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">📊</div><div class="tool-name">Percentage Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/age-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🎂</div><div class="tool-name">Age Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/zakat-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🌙</div><div class="tool-name">Zakat Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/currency-converter/" class="tool-card"><div class="tool-icon" aria-hidden="true">💱</div><div class="tool-name">Currency Converter</div><div class="tool-arrow" aria-hidden="true">→</div></a></div></section>
+</main>
+
+<script is:inline>
+function fN(n){return new Intl.NumberFormat('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}).format(n);}
+function calcBill(){
+  const tot=+document.getElementById('bT').value;
+  const ppl=+document.getElementById('bP').value||1;
+  const tipPct=+document.getElementById('bTp').value;
+  if(!tot)return;
+  const tip=tot*tipPct/100,grand=tot+tip,per=grand/ppl;
+  document.getElementById('bPer').textContent=fN(per);
+  document.getElementById('bTipA').textContent=fN(tip);
+  document.getElementById('bGrand').textContent=fN(grand);
+  document.getElementById('bRes').classList.add('show');
+}
+</script>
+
+</Layout>

@@ -1,0 +1,100 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout
+  lang="en"
+  title="Currency Converter | Sahloo سهلو"
+  description="Free live currency converter — real-time exchange rates for 150+ currencies including all Arab currencies."
+  canonical="https://sahloo.com/en/tools/currency-converter/"
+>
+<main id="main" class="tool-page">
+  <div class="tool-hero">
+    <div class="container--n container">
+      <nav class="breadcrumb" aria-label="breadcrumb"><a href="#" class="lang-switch">Home</a><span class="bc-sep" aria-hidden="true">›</span><a href="/en/tools/">Tools</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">Currency Converter</span></nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sahloo.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://sahloo.com/en/tools/"}, {"@type": "ListItem", "position": 3, "name": "Currency Converter"}]}</script>
+      <div class="tool-hero-content">
+        <div class="tool-page-icon" aria-hidden="true">💱</div>
+        <h1 class="tool-page-title">Currency Converter</h1>
+        <p class="tool-page-sub">Live exchange rates — 150+ world currencies</p>
+      </div>
+    </div>
+  </div>
+  <div class="container--n container" style="padding-top:24px;">
+    <div class="calc-card">
+      <div id="ratesStatus" class="notice notice-blue" role="status" aria-live="polite">Loading live rates…</div>
+      <div class="form-group"><label class="form-label" for="curAmt">Amount</label><input type="number" inputmode="decimal" class="form-input" id="curAmt" placeholder="100" oninput="convertCurrency()"></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label" for="curFrom">From</label><select class="form-select" id="curFrom" onchange="convertCurrency()"><option value="USD" selected>USD — US Dollar</option><option value="EUR" >EUR — Euro</option><option value="GBP" >GBP — British Pound</option><option value="SAR" >SAR — Saudi Riyal</option><option value="AED" >AED — UAE Dirham</option><option value="KWD" >KWD — Kuwaiti Dinar</option><option value="QAR" >QAR — Qatari Riyal</option><option value="BHD" >BHD — Bahraini Dinar</option><option value="OMR" >OMR — Omani Rial</option><option value="EGP" >EGP — Egyptian Pound</option><option value="JOD" >JOD — Jordanian Dinar</option><option value="MAD" >MAD — Moroccan Dirham</option><option value="TND" >TND — Tunisian Dinar</option><option value="DZD" >DZD — Algerian Dinar</option><option value="IQD" >IQD — Iraqi Dinar</option><option value="LYD" >LYD — Libyan Dinar</option><option value="SDG" >SDG — Sudanese Pound</option><option value="YER" >YER — Yemeni Rial</option><option value="LBP" >LBP — Lebanese Pound</option><option value="SYP" >SYP — Syrian Pound</option><option value="TRY" >TRY — Turkish Lira</option><option value="JPY" >JPY — Japanese Yen</option><option value="CNY" >CNY — Chinese Yuan</option><option value="CAD" >CAD — Canadian Dollar</option><option value="AUD" >AUD — Australian Dollar</option><option value="CHF" >CHF — Swiss Franc</option><option value="INR" >INR — Indian Rupee</option><option value="PKR" >PKR — Pakistani Rupee</option><option value="NGN" >NGN — Nigerian Naira</option></select></div>
+        <div class="form-group"><label class="form-label" for="curTo">To</label><select class="form-select" id="curTo" onchange="convertCurrency()"><option value="USD" >USD — US Dollar</option><option value="EUR" >EUR — Euro</option><option value="GBP" >GBP — British Pound</option><option value="SAR" selected>SAR — Saudi Riyal</option><option value="AED" >AED — UAE Dirham</option><option value="KWD" >KWD — Kuwaiti Dinar</option><option value="QAR" >QAR — Qatari Riyal</option><option value="BHD" >BHD — Bahraini Dinar</option><option value="OMR" >OMR — Omani Rial</option><option value="EGP" >EGP — Egyptian Pound</option><option value="JOD" >JOD — Jordanian Dinar</option><option value="MAD" >MAD — Moroccan Dirham</option><option value="TND" >TND — Tunisian Dinar</option><option value="DZD" >DZD — Algerian Dinar</option><option value="IQD" >IQD — Iraqi Dinar</option><option value="LYD" >LYD — Libyan Dinar</option><option value="SDG" >SDG — Sudanese Pound</option><option value="YER" >YER — Yemeni Rial</option><option value="LBP" >LBP — Lebanese Pound</option><option value="SYP" >SYP — Syrian Pound</option><option value="TRY" >TRY — Turkish Lira</option><option value="JPY" >JPY — Japanese Yen</option><option value="CNY" >CNY — Chinese Yuan</option><option value="CAD" >CAD — Canadian Dollar</option><option value="AUD" >AUD — Australian Dollar</option><option value="CHF" >CHF — Swiss Franc</option><option value="INR" >INR — Indian Rupee</option><option value="PKR" >PKR — Pakistani Rupee</option><option value="NGN" >NGN — Nigerian Naira</option></select></div>
+      </div>
+      <div class="btn-row" style="margin-bottom:8px;"><button class="btn btn-secondary" onclick="swapCur()" aria-label="Swap currencies">⇄ Swap</button></div>
+      <div class="result-card show" id="curRes" aria-live="polite" aria-atomic="true">
+        <div class="result-label">Result</div>
+        <div class="result-value" id="curVal">Enter an amount</div>
+        <div class="result-sub"   id="curRate"></div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:8px;" id="rateTime"></div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Powered by ExchangeRate-API.com</div>
+      </div>
+    </div>
+    <div class="info-section"><div class="info-card"><h2>💱 How Does the Converter Work?</h2>
+<p>This tool fetches live exchange rates from <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">ExchangeRate-API.com</a> every time the page loads. The rates are mid-market rates updated hourly.</p>
+<p>For actual money transfers, your bank or exchange service will apply their own buying/selling spreads on top of the mid-market rate.</p></div>
+<div class="info-card"><h2>🌍 Supported Currencies</h2>
+<ul><li><strong>GCC:</strong> Saudi Riyal (SAR), UAE Dirham (AED), Kuwaiti Dinar (KWD), Qatari Riyal (QAR), Bahraini Dinar (BHD), Omani Rial (OMR)</li>
+<li><strong>Arab World:</strong> Egyptian Pound (EGP), Jordanian Dinar (JOD), Moroccan Dirham (MAD), Tunisian Dinar (TND), Algerian Dinar (DZD), Iraqi Dinar (IQD)</li>
+<li><strong>Global:</strong> USD, EUR, GBP, JPY, CNY, TRY and 130+ more</li></ul></div>
+<div class="info-card"><h2>💡 Tips for Currency Exchange</h2>
+<ul><li>Always compare rates from multiple banks and exchange services</li>
+<li>Watch out for hidden fees and commissions</li>
+<li>Exchange rates fluctuate constantly — check before large transactions</li>
+<li>Banks typically offer better rates than airport exchange booths</li></ul></div><div class="info-card" itemscope itemtype="https://schema.org/FAQPage"><h2>❓ FAQ</h2><div class="faq-list"><div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa0" itemprop="name">Where do the exchange rates come from?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa0" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">Exchange rates are fetched live from ExchangeRate-API.com, which aggregates data from multiple financial sources and updates every hour.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa1" itemprop="name">How accurate are the rates?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">The rates are mid-market rates suitable for reference. For actual transactions, check your bank or exchange service as they may apply spreads.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa2" itemprop="name">Which currencies are supported?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">Over 150 world currencies including all Gulf Cooperation Council (GCC) currencies and major Arabic-speaking country currencies.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa3" itemprop="name">Are the rates updated in real time?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">Rates are updated hourly from ExchangeRate-API.com. A timestamp shows when rates were last refreshed.</span></div></div>
+</div></div>
+</div>
+  </div>
+  <section class="related-section container--n container" aria-label="Related Tools"><div class="section-hd"><h2 class="section-title">Related Tools</h2><a href="/en/tools/" class="see-all">All Tools</a></div><div class="tools-grid"><a href="/en/tools/percentage-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">📊</div><div class="tool-name">Percentage Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/age-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🎂</div><div class="tool-name">Age Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/zakat-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🌙</div><div class="tool-name">Zakat Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/loan-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🏦</div><div class="tool-name">Loan Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a></div></section>
+</main>
+
+<script is:inline>
+let RATES={};
+const fmt=(n,dec=4)=>new Intl.NumberFormat('en-US',{minimumFractionDigits:2,maximumFractionDigits:dec}).format(n);
+async function loadRates(){
+  try{
+    const r=await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+    if(!r.ok)throw new Error('network');
+    const d=await r.json();
+    RATES=d.rates;
+    const ts=new Date(d.time_last_updated*1000).toLocaleString('en-US');
+    document.getElementById('rateTime').textContent='Last updated: '+ts;
+    document.getElementById('ratesStatus').textContent='✅ Live rates loaded from ExchangeRate-API.com';
+    document.getElementById('ratesStatus').className='notice notice-blue';
+    convertCurrency();
+  }catch(e){
+    document.getElementById('ratesStatus').textContent='⚠️ Could not load live rates — using approximate fallback rates.';
+    document.getElementById('ratesStatus').className='notice notice-amber';
+    RATES={USD:1,EUR:.92,GBP:.79,SAR:3.75,AED:3.67,KWD:.307,QAR:3.64,BHD:.376,OMR:.385,EGP:48.8,JOD:.709,MAD:10.1,TND:3.12,DZD:135,IQD:1310,LYD:4.85,TRY:32.5,JPY:149,CNY:7.2,CAD:1.36,AUD:1.53,CHF:.89,INR:83,PKR:278,NGN:1550,YER:250,LBP:89500,SYP:13000,SDG:600};
+    convertCurrency();
+  }
+}
+function convertCurrency(){
+  const amt=+document.getElementById('curAmt').value;
+  const fr=document.getElementById('curFrom').value;
+  const to=document.getElementById('curTo').value;
+  if(!amt||!RATES[fr]||!RATES[to]){document.getElementById('curVal').textContent='Enter an amount';return;}
+  const rate=(RATES[to]/RATES[fr]);
+  const res=amt*rate;
+  document.getElementById('curVal').textContent=fmt(res,2)+' '+to;
+  document.getElementById('curRate').textContent='1 '+fr+' = '+fmt(rate)+' '+to;
+}
+function swapCur(){
+  const tmp=document.getElementById('curFrom').value;
+  document.getElementById('curFrom').value=document.getElementById('curTo').value;
+  document.getElementById('curTo').value=tmp;
+  convertCurrency();
+}
+loadRates();
+</script>
+
+</Layout>

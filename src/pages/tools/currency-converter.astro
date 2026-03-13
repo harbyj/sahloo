@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  lang="ar"
+  title="تحويل العملات | Sahloo سهلو"
+  description="تحويل العملات مجاناً بأسعار لحظية — ريال، درهم، دولار، يورو وأكثر من 150 عملة."
+  canonical="https://sahloo.com/tools/currency-converter/"
+>
+<main id="main" class="tool-page">
+  <div class="tool-hero">
+    <div class="container--n container">
+      <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">الرئيسية</a><span class="bc-sep" aria-hidden="true">›</span><a href="/tools/">الأدوات</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">تحويل العملات</span></nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://sahloo.com/"}, {"@type": "ListItem", "position": 2, "name": "الأدوات", "item": "https://sahloo.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "تحويل العملات"}]}</script>
+      <div class="tool-hero-content">
+        <div class="tool-page-icon" aria-hidden="true">💱</div>
+        <h1 class="tool-page-title">تحويل العملات</h1>
+        <p class="tool-page-sub">أسعار صرف لحظية — عملات عربية وعالمية</p>
+      </div>
+    </div>
+  </div>
+  <div class="container--n container" style="padding-top:24px;">
+    <div class="calc-card">
+      <div id="ratesStatus" class="notice notice-blue" role="status" aria-live="polite">جاري تحميل الأسعار اللحظية…</div>
+      <div class="form-group"><label class="form-label" for="curAmt">المبلغ</label><input type="number" inputmode="decimal" class="form-input" id="curAmt" placeholder="100" oninput="convertCurrency()"></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label" for="curFrom">من</label><select class="form-select" id="curFrom" onchange="convertCurrency()"><option value="USD" >USD — دولار أمريكي</option><option value="EUR" >EUR — يورو</option><option value="GBP" >GBP — جنيه إسترليني</option><option value="SAR" selected>SAR — ريال سعودي</option><option value="AED" >AED — درهم إماراتي</option><option value="KWD" >KWD — دينار كويتي</option><option value="QAR" >QAR — ريال قطري</option><option value="BHD" >BHD — دينار بحريني</option><option value="OMR" >OMR — ريال عُماني</option><option value="EGP" >EGP — جنيه مصري</option><option value="JOD" >JOD — دينار أردني</option><option value="MAD" >MAD — درهم مغربي</option><option value="TND" >TND — دينار تونسي</option><option value="DZD" >DZD — دينار جزائري</option><option value="IQD" >IQD — دينار عراقي</option><option value="LYD" >LYD — دينار ليبي</option><option value="SDG" >SDG — جنيه سوداني</option><option value="YER" >YER — ريال يمني</option><option value="LBP" >LBP — ليرة لبنانية</option><option value="SYP" >SYP — ليرة سورية</option><option value="TRY" >TRY — ليرة تركية</option><option value="JPY" >JPY — ين ياباني</option><option value="CNY" >CNY — يوان صيني</option><option value="CAD" >CAD — دولار كندي</option><option value="AUD" >AUD — دولار أسترالي</option><option value="CHF" >CHF — فرنك سويسري</option><option value="INR" >INR — روبية هندية</option><option value="PKR" >PKR — روبية باكستانية</option><option value="NGN" >NGN — نيرة نيجيرية</option></select></div>
+        <div class="form-group"><label class="form-label" for="curTo">إلى</label><select class="form-select" id="curTo" onchange="convertCurrency()"><option value="USD" selected>USD — دولار أمريكي</option><option value="EUR" >EUR — يورو</option><option value="GBP" >GBP — جنيه إسترليني</option><option value="SAR" >SAR — ريال سعودي</option><option value="AED" >AED — درهم إماراتي</option><option value="KWD" >KWD — دينار كويتي</option><option value="QAR" >QAR — ريال قطري</option><option value="BHD" >BHD — دينار بحريني</option><option value="OMR" >OMR — ريال عُماني</option><option value="EGP" >EGP — جنيه مصري</option><option value="JOD" >JOD — دينار أردني</option><option value="MAD" >MAD — درهم مغربي</option><option value="TND" >TND — دينار تونسي</option><option value="DZD" >DZD — دينار جزائري</option><option value="IQD" >IQD — دينار عراقي</option><option value="LYD" >LYD — دينار ليبي</option><option value="SDG" >SDG — جنيه سوداني</option><option value="YER" >YER — ريال يمني</option><option value="LBP" >LBP — ليرة لبنانية</option><option value="SYP" >SYP — ليرة سورية</option><option value="TRY" >TRY — ليرة تركية</option><option value="JPY" >JPY — ين ياباني</option><option value="CNY" >CNY — يوان صيني</option><option value="CAD" >CAD — دولار كندي</option><option value="AUD" >AUD — دولار أسترالي</option><option value="CHF" >CHF — فرنك سويسري</option><option value="INR" >INR — روبية هندية</option><option value="PKR" >PKR — روبية باكستانية</option><option value="NGN" >NGN — نيرة نيجيرية</option></select></div>
+      </div>
+      <div class="btn-row" style="margin-bottom:8px;"><button class="btn btn-secondary" onclick="swapCur()" aria-label="Swap currencies">⇄ عكس</button></div>
+      <div class="result-card show" id="curRes" aria-live="polite" aria-atomic="true">
+        <div class="result-label">النتيجة</div>
+        <div class="result-value" id="curVal">أدخل مبلغاً</div>
+        <div class="result-sub"   id="curRate"></div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:8px;" id="rateTime"></div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">مدعوم من ExchangeRate-API.com</div>
+      </div>
+    </div>
+    <div class="info-section"><div class="info-card"><h2>💱 كيف يعمل المحوّل؟</h2>
+<p>تجلب هذه الأداة أسعار الصرف لحظياً من <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">ExchangeRate-API.com</a> عند كل تحميل للصفحة. الأسعار هي أسعار منتصف السوق، تتحدث كل ساعة.</p>
+<p>للتحويلات المالية الفعلية، سيطبق بنكك أو شركة الصرافة فروقاً على سعر السوق.</p></div>
+<div class="info-card"><h2>🌍 العملات المدعومة</h2>
+<ul><li><strong>دول الخليج:</strong> ريال سعودي، درهم إماراتي، دينار كويتي، ريال قطري، دينار بحريني، ريال عُماني</li>
+<li><strong>العالم العربي:</strong> جنيه مصري، دينار أردني، درهم مغربي، دينار تونسي، دينار جزائري، دينار عراقي</li>
+<li><strong>عالمي:</strong> دولار، يورو، جنيه إسترليني، ين ياباني وأكثر من 130 عملة أخرى</li></ul></div>
+<div class="info-card"><h2>💡 نصائح عند تحويل العملات</h2>
+<ul><li>دائماً قارن الأسعار بين عدة بنوك وشركات تحويل</li>
+<li>انتبه للعمولات والرسوم المخفية</li>
+<li>الأسعار تتغير باستمرار — تحقق قبل أي معاملة كبيرة</li>
+<li>البنوك عادةً تعطي أسعاراً أفضل من الصرافين</li></ul></div><div class="info-card" itemscope itemtype="https://schema.org/FAQPage"><h2>❓ أسئلة شائعة</h2><div class="faq-list"><div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa0" itemprop="name">من أين تأتي أسعار الصرف؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa0" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">يتم جلب الأسعار لحظياً من ExchangeRate-API.com، التي تجمع بيانات من مصادر مالية متعددة وتتحدث كل ساعة.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa1" itemprop="name">ما مدى دقة الأسعار؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">الأسعار هي أسعار السوق المتوسطة للاستئناس. للمعاملات الفعلية تحقق من بنكك أو شركة الصرافة.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa2" itemprop="name">ما العملات المدعومة؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">أكثر من 150 عملة عالمية تشمل جميع عملات مجلس التعاون الخليجي والدول العربية الرئيسية.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa3" itemprop="name">هل الأسعار لحظية؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">يتم تحديث الأسعار كل ساعة من ExchangeRate-API.com. يُعرض وقت آخر تحديث أسفل النتيجة.</span></div></div>
+</div></div>
+</div>
+  </div>
+  <section class="related-section container--n container" aria-label="أدوات مشابهة"><div class="section-hd"><h2 class="section-title">أدوات مشابهة</h2><a href="/tools/" class="see-all">جميع الأدوات</a></div><div class="tools-grid"><a href="/tools/percentage-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">📊</div><div class="tool-name">حاسبة النسبة المئوية</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/age-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🎂</div><div class="tool-name">حساب العمر</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/zakat-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🌙</div><div class="tool-name">حاسبة الزكاة</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/loan-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🏦</div><div class="tool-name">حاسبة القروض</div><div class="tool-arrow" aria-hidden="true">←</div></a></div></section>
+</main>
+
+<script is:inline>
+let RATES={};
+const fmt=(n,dec=4)=>new Intl.NumberFormat('ar-SA',{minimumFractionDigits:2,maximumFractionDigits:dec}).format(n);
+async function loadRates(){
+  try{
+    const r=await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+    if(!r.ok)throw new Error('network');
+    const d=await r.json();
+    RATES=d.rates;
+    const ts=new Date(d.time_last_updated*1000).toLocaleString('ar-SA');
+    document.getElementById('rateTime').textContent='آخر تحديث: '+ts;
+    document.getElementById('ratesStatus').textContent='✅ تم تحميل الأسعار اللحظية من ExchangeRate-API.com';
+    document.getElementById('ratesStatus').className='notice notice-blue';
+    convertCurrency();
+  }catch(e){
+    document.getElementById('ratesStatus').textContent='⚠️ تعذر تحميل الأسعار اللحظية — يتم استخدام أسعار تقريبية.';
+    document.getElementById('ratesStatus').className='notice notice-amber';
+    RATES={USD:1,EUR:.92,GBP:.79,SAR:3.75,AED:3.67,KWD:.307,QAR:3.64,BHD:.376,OMR:.385,EGP:48.8,JOD:.709,MAD:10.1,TND:3.12,DZD:135,IQD:1310,LYD:4.85,TRY:32.5,JPY:149,CNY:7.2,CAD:1.36,AUD:1.53,CHF:.89,INR:83,PKR:278,NGN:1550,YER:250,LBP:89500,SYP:13000,SDG:600};
+    convertCurrency();
+  }
+}
+function convertCurrency(){
+  const amt=+document.getElementById('curAmt').value;
+  const fr=document.getElementById('curFrom').value;
+  const to=document.getElementById('curTo').value;
+  if(!amt||!RATES[fr]||!RATES[to]){document.getElementById('curVal').textContent='أدخل مبلغاً';return;}
+  const rate=(RATES[to]/RATES[fr]);
+  const res=amt*rate;
+  document.getElementById('curVal').textContent=fmt(res,2)+' '+to;
+  document.getElementById('curRate').textContent='1 '+fr+' = '+fmt(rate)+' '+to;
+}
+function swapCur(){
+  const tmp=document.getElementById('curFrom').value;
+  document.getElementById('curFrom').value=document.getElementById('curTo').value;
+  document.getElementById('curTo').value=tmp;
+  convertCurrency();
+}
+loadRates();
+</script>
+
+</Layout>

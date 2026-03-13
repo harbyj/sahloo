@@ -1,23 +1,101 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import Header from '../components/Header.astro';
+import MobileDrawer from '../components/MobileDrawer.astro';
+import Footer from '../components/Footer.astro';
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+interface Props {
+  lang: 'ar' | 'en';
+  title: string;
+  description: string;
+  canonical: string;
+  ogLocale?: string;
+  schemaJson?: Record<string, unknown>;
+}
+
+const {
+  lang,
+  title,
+  description,
+  canonical,
+  ogLocale = lang === 'ar' ? 'ar_SA' : 'en_US',
+  schemaJson,
+} = Astro.props;
+
+const dir = lang === 'ar' ? 'rtl' : 'ltr';
+const altLang  = lang === 'ar' ? 'en' : 'ar';
+const altHref  = lang === 'ar'
+  ? canonical.replace('https://sahloo.com/', 'https://sahloo.com/en/')
+  : canonical.replace('https://sahloo.com/en/', 'https://sahloo.com/');
+---
+<!DOCTYPE html>
+<html lang={lang} dir={dir} data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href={canonical} />
+  <link rel="alternate" hreflang={lang}      href={canonical} />
+  <link rel="alternate" hreflang={altLang}   href={altHref} />
+  <link rel="alternate" hreflang="x-default" href={lang === 'ar' ? canonical : altHref} />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url"         content={canonical} />
+  <meta property="og:image"       content="https://sahloo.com/img/og.png" />
+  <meta property="og:locale"      content={ogLocale} />
+  <meta property="og:site_name"   content="Sahloo سهلو" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image"       content="https://sahloo.com/img/og.png" />
+
+  <!-- PWA / icons -->
+  <link rel="manifest"        href="/manifest.json" />
+  <meta name="theme-color"    content="#17a868" />
+  <link rel="icon"            href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;900&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'"
+  />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  </noscript>
+
+  <link rel="stylesheet" href="/css/main.min.css" />
+
+  {schemaJson && (
+    <script type="application/ld+json" set:html={JSON.stringify(schemaJson)} />
+  )}
+
+  <!-- Prevent theme flash -->
+  <script is:inline>
+    (function () {
+      var t = localStorage.getItem('sahloo_theme') || 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body class={lang}>
+  <a class="skip-link" href="#main">{lang === 'ar' ? 'تخطى إلى المحتوى' : 'Skip to content'}</a>
+
+  <Header lang={lang} />
+  <MobileDrawer lang={lang} />
+
+  <slot />
+
+  <Footer lang={lang} />
+
+  <script src="/js/main.min.js" defer></script>
+</body>
+</html>

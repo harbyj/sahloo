@@ -1,0 +1,67 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  lang="ar"
+  title="الفرق بين تاريخين | Sahloo سهلو"
+  description="حاسبة الفرق بين تاريخين — احسب الفترة الزمنية الدقيقة بالأيام والأشهر والسنوات."
+  canonical="https://sahloo.com/tools/date-difference/"
+>
+<main id="main" class="tool-page">
+  <div class="tool-hero">
+    <div class="container--n container">
+      <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">الرئيسية</a><span class="bc-sep" aria-hidden="true">›</span><a href="/tools/">الأدوات</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">الفرق بين تاريخين</span></nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://sahloo.com/"}, {"@type": "ListItem", "position": 2, "name": "الأدوات", "item": "https://sahloo.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "الفرق بين تاريخين"}]}</script>
+      <div class="tool-hero-content">
+        <div class="tool-page-icon" aria-hidden="true">📅</div>
+        <h1 class="tool-page-title">الفرق بين تاريخين</h1>
+        <p class="tool-page-sub">احسب الفرق الدقيق بين أي تاريخين</p>
+      </div>
+    </div>
+  </div>
+  <div class="container--n container" style="padding-top:24px;">
+    <div class="calc-card">
+      <div class="form-row">
+        <div class="form-group"><label class="form-label" for="d1">من تاريخ</label><input type="date" class="form-input" id="d1"></div>
+        <div class="form-group"><label class="form-label" for="d2">إلى تاريخ</label><input type="date" class="form-input" id="d2"></div>
+      </div>
+      <button class="btn btn-primary btn-full" onclick="calcDD()">احسب ←</button>
+      <div class="result-card" id="ddRes" aria-live="polite">
+        <div class="result-grid">
+          <div class="result-item"><div class="val" id="ddY">0</div><div class="lbl">سنة</div></div>
+          <div class="result-item"><div class="val" id="ddM">0</div><div class="lbl">شهر</div></div>
+          <div class="result-item"><div class="val" id="ddD">0</div><div class="lbl">يوم</div></div>
+        </div>
+        <div class="result-sub" id="ddSub"></div>
+      </div>
+    </div>
+    <div class="info-section"><div class="info-card"><h2>📅 متى تستخدم هذه الأداة؟</h2>
+<ul><li>حساب مدة خدمتك في وظيفة</li><li>معرفة المدة حتى انتهاء عقد</li><li>حساب عمر طفل لأغراض طبية</li><li>حساب مدة مشروع أو برنامج تدريبي</li><li>معرفة كم مضى على حدث مهم</li></ul></div><div class="info-card" itemscope itemtype="https://schema.org/FAQPage"><h2>❓ أسئلة شائعة</h2><div class="faq-list"><div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa0" itemprop="name">هل تراعي السنوات الكبيسة؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa0" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">نعم — الحاسبة تراعي السنوات الكبيسة وعدد أيام كل شهر لأعلى دقة.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa1" itemprop="name">هل يمكن حساب فرق بين تواريخ ماضية أو مستقبلية؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">نعم — أدخل أي تاريخين بأي ترتيب. الحاسبة تعرض الفرق المطلق.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa2" itemprop="name">ما أقصى نطاق تاريخي مدعوم؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">الحاسبة تدعم أي نطاق تاريخي من العام 1 م حتى التواريخ البعيدة.</span></div></div>
+</div></div>
+</div>
+  </div>
+  <section class="related-section container--n container" aria-label="أدوات مشابهة"><div class="section-hd"><h2 class="section-title">أدوات مشابهة</h2><a href="/tools/" class="see-all">جميع الأدوات</a></div><div class="tools-grid"><a href="/tools/percentage-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">📊</div><div class="tool-name">حاسبة النسبة المئوية</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/age-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🎂</div><div class="tool-name">حساب العمر</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/zakat-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🌙</div><div class="tool-name">حاسبة الزكاة</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/currency-converter/" class="tool-card"><div class="tool-icon" aria-hidden="true">💱</div><div class="tool-name">تحويل العملات</div><div class="tool-arrow" aria-hidden="true">←</div></a></div></section>
+</main>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded',()=>document.getElementById('d2').value=new Date().toISOString().split('T')[0]);
+function calcDD(){
+  const a=new Date(document.getElementById('d1').value),b=new Date(document.getElementById('d2').value);
+  if(!document.getElementById('d1').value||!document.getElementById('d2').value)return;
+  const[s,e]=a<=b?[a,b]:[b,a];
+  let y=e.getFullYear()-s.getFullYear(),m=e.getMonth()-s.getMonth(),d=e.getDate()-s.getDate();
+  if(d<0){m--;d+=new Date(e.getFullYear(),e.getMonth(),0).getDate();}
+  if(m<0){y--;m+=12;}
+  const td=Math.round((e-s)/86400000);
+  const fmt=n=>new Intl.NumberFormat('ar-SA').format(n);
+  document.getElementById('ddY').textContent=fmt(y);
+  document.getElementById('ddM').textContent=fmt(m);
+  document.getElementById('ddD').textContent=fmt(d);
+  document.getElementById('ddSub').textContent='الإجمالي: '+fmt(td)+'  يوم | '+fmt(Math.floor(td/7))+'  أسبوع';
+  document.getElementById('ddRes').classList.add('show');
+}
+</script>
+
+</Layout>

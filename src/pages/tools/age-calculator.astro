@@ -1,0 +1,73 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  lang="ar"
+  title="حساب العمر | Sahloo سهلو"
+  description="حاسبة العمر المجانية — احسب عمرك الدقيق بالسنوات والأشهر والأيام والأسابيع."
+  canonical="https://sahloo.com/tools/age-calculator/"
+>
+<main id="main" class="tool-page">
+  <div class="tool-hero">
+    <div class="container--n container">
+      <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">الرئيسية</a><span class="bc-sep" aria-hidden="true">›</span><a href="/tools/">الأدوات</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">حساب العمر</span></nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://sahloo.com/"}, {"@type": "ListItem", "position": 2, "name": "الأدوات", "item": "https://sahloo.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "حساب العمر"}]}</script>
+      <div class="tool-hero-content">
+        <div class="tool-page-icon" aria-hidden="true">🎂</div>
+        <h1 class="tool-page-title">حساب العمر</h1>
+        <p class="tool-page-sub">احسب عمرك بالسنوات والأشهر والأيام بدقة</p>
+      </div>
+    </div>
+  </div>
+  <div class="container--n container" style="padding-top:24px;">
+    <div class="calc-card">
+      <div class="form-group"><label class="form-label" for="bDate">تاريخ الميلاد</label><input type="date" class="form-input" id="bDate" required></div>
+      <div class="form-group"><label class="form-label" for="tDate">حساب العمر حتى تاريخ</label><input type="date" class="form-input" id="tDate"><p class="form-hint">اتركه فارغاً ليحسب حتى اليوم</p></div>
+      <button class="btn btn-primary btn-full" onclick="calcAge()">احسب عمري ←</button>
+      <div class="result-card" id="ageRes" aria-live="polite">
+        <div class="result-label">عمرك</div>
+        <div class="result-grid">
+          <div class="result-item"><div class="val" id="aY">0</div><div class="lbl">سنة</div></div>
+          <div class="result-item"><div class="val" id="aM">0</div><div class="lbl">شهر</div></div>
+          <div class="result-item"><div class="val" id="aD">0</div><div class="lbl">يوم</div></div>
+        </div>
+        <div class="result-sub" id="aSub"></div>
+      </div>
+    </div>
+    <div class="info-section"><div class="info-card"><h2>🎂 عن حاسبة العمر</h2>
+<p>هذه الأداة تحسب عمرك الدقيق بناءً على تاريخ ميلادك، وتعطيك النتيجة بالسنوات والأشهر والأيام والأسابيع الإجمالية.</p>
+<p>مفيدة للوثائق الرسمية والمواعيد الطبية وطلبات التوظيف أو مجرد الفضول!</p></div>
+<div class="info-card"><h2>🧮 كيفية الاستخدام</h2>
+<ol class="steps-list"><li>أدخل تاريخ ميلادك في الحقل الأول.</li><li>اختياراً: حدد تاريخاً في الحقل الثاني (الافتراضي: اليوم).</li><li>اضغط "احسب عمري" للحصول على النتيجة.</li></ol></div>
+<div class="info-card"><h2>💡 هل تعلم؟</h2>
+<ul><li>متوسط عمر الإنسان حوالي <strong>28,000 يوم</strong>.</li>
+<li>السنة الكبيسة تضيف يوماً إضافياً كل 4 سنوات تقريباً.</li>
+<li>بعض الثقافات تحسب العمر من الحمل لا من الولادة.</li></ul></div><div class="info-card" itemscope itemtype="https://schema.org/FAQPage"><h2>❓ أسئلة شائعة</h2><div class="faq-list"><div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa0" itemprop="name">كيف يُحسب عمري بدقة؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa0" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">نطرح تاريخ ميلادك من تاريخ اليوم (أو التاريخ المحدد) مع مراعاة السنوات الكبيسة وعدد أيام كل شهر.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa1" itemprop="name">هل يمكنني حساب عمري حتى تاريخ معين؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">نعم — أدخل أي تاريخ في الحقل الثاني لحساب عمرك حتى ذلك التاريخ.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa2" itemprop="name">هل تدعم الحاسبة التاريخ الهجري؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">الحاسبة تستخدم التقويم الميلادي. لتحويل التاريخ الهجري يُنصح باستخدام أداة تحويل تقويم متخصصة.</span></div></div>
+</div></div>
+</div>
+  </div>
+  <section class="related-section container--n container" aria-label="أدوات مشابهة"><div class="section-hd"><h2 class="section-title">أدوات مشابهة</h2><a href="/tools/" class="see-all">جميع الأدوات</a></div><div class="tools-grid"><a href="/tools/percentage-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">📊</div><div class="tool-name">حاسبة النسبة المئوية</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/zakat-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🌙</div><div class="tool-name">حاسبة الزكاة</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/currency-converter/" class="tool-card"><div class="tool-icon" aria-hidden="true">💱</div><div class="tool-name">تحويل العملات</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/loan-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🏦</div><div class="tool-name">حاسبة القروض</div><div class="tool-arrow" aria-hidden="true">←</div></a></div></section>
+</main>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded',()=>{document.getElementById('tDate').value=new Date().toISOString().split('T')[0];});
+function calcAge(){
+  const b=new Date(document.getElementById('bDate').value);
+  const t=new Date(document.getElementById('tDate').value||new Date().toISOString().split('T')[0]);
+  if(!document.getElementById('bDate').value||b>t)return;
+  let y=t.getFullYear()-b.getFullYear(),m=t.getMonth()-b.getMonth(),d=t.getDate()-b.getDate();
+  if(d<0){m--;d+=new Date(t.getFullYear(),t.getMonth(),0).getDate();}
+  if(m<0){y--;m+=12;}
+  const td=Math.floor((t-b)/86400000);
+  const fmt=n=>new Intl.NumberFormat('ar-SA').format(n);
+  document.getElementById('aY').textContent=fmt(y);
+  document.getElementById('aM').textContent=fmt(m);
+  document.getElementById('aD').textContent=fmt(d);
+  document.getElementById('aSub').textContent='الإجمالي: '+fmt(td)+'  يوم | '+fmt(Math.floor(td/7))+'  أسبوع';
+  document.getElementById('ageRes').classList.add('show');
+}
+</script>
+
+</Layout>

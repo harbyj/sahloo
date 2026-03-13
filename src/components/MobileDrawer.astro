@@ -1,0 +1,33 @@
+---
+interface Props { lang: 'ar' | 'en' }
+const { lang } = Astro.props;
+const p    = lang === 'en' ? '/en' : '';
+const isAr = lang === 'ar';
+---
+<div class="drawer-overlay" aria-hidden="true"></div>
+<nav class="mobile-drawer" id="mDrawer" aria-label="Mobile navigation">
+  <a href={`${p}/`}       class="nav-link">{isAr ? '🏠 الرئيسية'      : '🏠 Home'      }</a>
+  <a href={`${p}/tools/`} class="nav-link">{isAr ? '🧮 جميع الأدوات'  : '🧮 All Tools' }</a>
+
+  <div class="drawer-section">{isAr ? 'الأدوات' : 'Popular Tools'}</div>
+  <a href={`${p}/tools/percentage-calculator/`} class="nav-link">{isAr ? '📊 حاسبة النسبة المئوية' : '📊 Percentage Calculator'}</a>
+  <a href={`${p}/tools/age-calculator/`}        class="nav-link">{isAr ? '🎂 حساب العمر'           : '🎂 Age Calculator'       }</a>
+  <a href={`${p}/tools/zakat-calculator/`}      class="nav-link">{isAr ? '🌙 حاسبة الزكاة'         : '🌙 Zakat Calculator'     }</a>
+  <a href={`${p}/tools/currency-converter/`}    class="nav-link">{isAr ? '💱 تحويل العملات'         : '💱 Currency Converter'   }</a>
+  <a href={`${p}/tools/loan-calculator/`}       class="nav-link">{isAr ? '🏦 حاسبة القروض'          : '🏦 Loan Calculator'      }</a>
+  <a href={`${p}/tools/date-difference/`}       class="nav-link">{isAr ? '📅 الفرق بين تاريخين'     : '📅 Date Difference'      }</a>
+  <a href={`${p}/tools/discount-calculator/`}   class="nav-link">{isAr ? '🏷️ حاسبة الخصم'           : '🏷️ Discount Calculator'  }</a>
+  <a href={`${p}/tools/bmi-calculator/`}        class="nav-link">{isAr ? '⚖️ مؤشر كتلة الجسم'       : '⚖️ BMI Calculator'       }</a>
+  <a href={`${p}/tools/bill-splitter/`}         class="nav-link">{isAr ? '🧾 تقسيم الفاتورة'         : '🧾 Bill Splitter'        }</a>
+  <a href={`${p}/tools/unit-converter/`}        class="nav-link">{isAr ? '📐 تحويل الوحدات'          : '📐 Unit Converter'       }</a>
+  <a href={`${p}/tools/gpa-calculator/`}        class="nav-link">{isAr ? '🎓 المعدل التراكمي'         : '🎓 GPA Calculator'       }</a>
+  <a href={`${p}/tools/days-until/`}            class="nav-link">{isAr ? '⏳ كم باقي على'             : '⏳ Days Until'           }</a>
+
+  <div class="drawer-section">{isAr ? 'الإعدادات' : 'Settings'}</div>
+  <a href="#" class="lang-switch nav-link">{isAr ? '🌐 English' : '🌐 عربي'}</a>
+  <button class="nav-link theme-btn"
+          style="width:100%;border:none;background:none;text-align:inherit;cursor:pointer;"
+          aria-label="toggle theme">
+    {isAr ? '☀️ السمة' : '☀️ Theme'}
+  </button>
+</nav>

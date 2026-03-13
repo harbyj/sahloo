@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#17a868"/>
+  <rect x="60" y="60" width="1080" height="510" rx="20" fill="#0f172a"/>
+  <text x="600" y="260" font-size="120" text-anchor="middle" font-family="Arial" fill="#17a868" font-weight="900">Sahloo</text>
+  <text x="600" y="370" font-size="60" text-anchor="middle" font-family="Arial" fill="white">سهلو · أدوات مجانية</text>
+  <text x="600" y="460" font-size="36" text-anchor="middle" font-family="Arial" fill="#94a3b8">sahloo.com</text>
+</svg>

@@ -1,0 +1,93 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  lang="ar"
+  title="مؤشر كتلة الجسم | Sahloo سهلو"
+  description="حاسبة مؤشر كتلة الجسم (BMI) المجانية — احسب مؤشرك واعرف نطاق وزنك المثالي."
+  canonical="https://sahloo.com/tools/bmi-calculator/"
+>
+<main id="main" class="tool-page">
+  <div class="tool-hero">
+    <div class="container--n container">
+      <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">الرئيسية</a><span class="bc-sep" aria-hidden="true">›</span><a href="/tools/">الأدوات</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">مؤشر كتلة الجسم</span></nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://sahloo.com/"}, {"@type": "ListItem", "position": 2, "name": "الأدوات", "item": "https://sahloo.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "مؤشر كتلة الجسم"}]}</script>
+      <div class="tool-hero-content">
+        <div class="tool-page-icon" aria-hidden="true">⚖️</div>
+        <h1 class="tool-page-title">مؤشر كتلة الجسم</h1>
+        <p class="tool-page-sub">اعرف هل وزنك في النطاق الصحي لطولك</p>
+      </div>
+    </div>
+  </div>
+  <div class="container--n container" style="padding-top:24px;">
+    <div class="calc-card">
+      <div class="form-row">
+        <div class="form-group"><label class="form-label" for="bW">الوزن (كغ)</label><input type="number" inputmode="decimal" class="form-input" id="bW" placeholder="75"></div>
+        <div class="form-group"><label class="form-label" for="bH">الطول (سم)</label><input type="number" inputmode="decimal" class="form-input" id="bH" placeholder="175"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label" for="bA">العمر (اختياري)</label><input type="number" inputmode="numeric" class="form-input" id="bA" placeholder="30"></div>
+        <div class="form-group"><label class="form-label" for="bS">الجنس</label>
+          <select class="form-select" id="bS"><option value="m">ذكر</option><option value="f">أنثى</option></select>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-full" onclick="calcBMI()">احسب المؤشر ←</button>
+      <div class="result-card" id="bRes" aria-live="polite">
+        <div class="result-label">BMI</div>
+        <div class="result-value" id="bVal">—</div>
+        <div id="bCat" style="font-size:16px;font-weight:700;margin-top:6px;"></div>
+        <div style="margin-top:14px;background:var(--surface);border-radius:var(--radius);padding:12px;">
+          <div style="display:flex;border-radius:6px;overflow:hidden;height:12px;">
+            <div style="flex:1;background:#3b82f6;"></div>
+            <div style="flex:2;background:#22c55e;"></div>
+            <div style="flex:1.5;background:#f59e0b;"></div>
+            <div style="flex:2;background:#ef4444;"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-muted);margin-top:5px;">
+            <span>نحيل&lt;18.5</span><span>طبيعي</span><span>زيادة</span><span>&gt;30 سمنة</span>
+          </div>
+        </div>
+        <div class="result-sub" id="bSub"></div>
+      </div>
+    </div>
+    <div class="info-section"><div class="info-card"><h2>⚖️ ما هو مؤشر كتلة الجسم؟</h2>
+<p>مؤشر كتلة الجسم (BMI) أداة بسيطة تستخدم الوزن والطول لتقدير نسبة الدهون. يُستخدم عالمياً كتقييم صحي أولي — وليس تشخيصاً طبياً.</p>
+<p>المعادلة: <strong>BMI = الوزن(كغ) ÷ الطول²(م)</strong></p></div>
+<div class="info-card"><h2>📊 تفسير النتائج</h2>
+<ul><li><strong>أقل من 18.5:</strong> نحافة — يُنصح باستشارة طبيب تغذية</li>
+<li><strong>18.5–24.9:</strong> وزن طبيعي ✅</li>
+<li><strong>25–29.9:</strong> زيادة وزن — يُنصح بتعديل النظام والرياضة</li>
+<li><strong>30–34.9:</strong> سمنة من الدرجة الأولى</li>
+<li><strong>35+:</strong> سمنة مفرطة — استشارة طبية ضرورية</li></ul></div>
+<div class="info-card"><h2>⚠️ قيود المؤشر</h2>
+<p>المؤشر أداة فرز وليس تشخيصاً. قد لا يكون دقيقاً لـ: الرياضيين (عضلاتهم ثقيلة)، كبار السن، النساء الحوامل، والأطفال. استشر طبيبك دائماً لتقييم شامل.</p></div><div class="info-card" itemscope itemtype="https://schema.org/FAQPage"><h2>❓ أسئلة شائعة</h2><div class="faq-list"><div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa0" itemprop="name">ما هو نطاق BMI الصحي؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa0" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">BMI بين 18.5 و24.9 يُعد صحياً لمعظم البالغين. أقل من 18.5 = نحافة؛ 25–29.9 = زيادة وزن؛ 30+ = سمنة.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa1" itemprop="name">هل المؤشر دقيق للرياضيين؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">لا — المؤشر لا يُميز بين العضلات والدهون. الرياضيون قد يكون مؤشرهم مرتفعاً بسبب كتلة العضلات مع كونهم بصحة ممتازة.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa2" itemprop="name">ما هي معادلة BMI؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">BMI = الوزن (كغ) ÷ الطول² (م). مثال: 70 ÷ (1.75)² = 70 ÷ 3.06 = 22.9</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa3" itemprop="name">هل يصلح للأطفال؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">هذه الحاسبة مصممة للبالغين. الأطفال والمراهقون يستخدمون مئينيات BMI خاصة بالعمر والجنس.</span></div></div>
+</div></div>
+</div>
+  </div>
+  <section class="related-section container--n container" aria-label="أدوات مشابهة"><div class="section-hd"><h2 class="section-title">أدوات مشابهة</h2><a href="/tools/" class="see-all">جميع الأدوات</a></div><div class="tools-grid"><a href="/tools/percentage-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">📊</div><div class="tool-name">حاسبة النسبة المئوية</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/age-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🎂</div><div class="tool-name">حساب العمر</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/zakat-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🌙</div><div class="tool-name">حاسبة الزكاة</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/currency-converter/" class="tool-card"><div class="tool-icon" aria-hidden="true">💱</div><div class="tool-name">تحويل العملات</div><div class="tool-arrow" aria-hidden="true">←</div></a></div></section>
+</main>
+
+<script is:inline>
+function calcBMI(){
+  const w=+document.getElementById('bW').value,h=+document.getElementById('bH').value;
+  if(!w||!h)return;
+  const hm=h/100,bmi=w/(hm*hm);
+  const minW=(18.5*hm*hm).toFixed(1),maxW=(24.9*hm*hm).toFixed(1);
+  let cat,col;
+  if(bmi<18.5)     {cat='نحيل 🔵';col='#3b82f6';}
+  else if(bmi<25)  {cat='وزن طبيعي ✅';col='#22c55e';}
+  else if(bmi<30)  {cat='زيادة وزن 🟡';col='#f59e0b';}
+  else if(bmi<35)  {cat='سمنة (درجة 1) 🔴';col='#ef4444';}
+  else             {cat='سمنة مفرطة 🔴';col='#dc2626';}
+  document.getElementById('bVal').textContent=bmi.toFixed(1);
+  document.getElementById('bCat').style.color=col;
+  document.getElementById('bCat').textContent=cat;
+  document.getElementById('bSub').textContent='النطاق الصحي لطولك: '+minW+' – '+maxW+' kg';
+  document.getElementById('bRes').classList.add('show');
+}
+</script>
+
+</Layout>

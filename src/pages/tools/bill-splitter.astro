@@ -1,0 +1,71 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  lang="ar"
+  title="تقسيم الفاتورة | Sahloo سهلو"
+  description="أداة تقسيم الفاتورة المجانية — قسّم فاتورة المطعم على الأصدقاء مع البقشيش."
+  canonical="https://sahloo.com/tools/bill-splitter/"
+>
+<main id="main" class="tool-page">
+  <div class="tool-hero"><div class="container--n container">
+    <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">الرئيسية</a><span class="bc-sep" aria-hidden="true">›</span><a href="/tools/">الأدوات</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">تقسيم الفاتورة</span></nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://sahloo.com/"}, {"@type": "ListItem", "position": 2, "name": "الأدوات", "item": "https://sahloo.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "تقسيم الفاتورة"}]}</script>
+    <div class="tool-hero-content">
+      <div class="tool-page-icon" aria-hidden="true">🧾</div>
+      <h1 class="tool-page-title">تقسيم الفاتورة</h1>
+      <p class="tool-page-sub">وزّع الفاتورة على الأصدقاء مع البقشيش</p>
+    </div>
+  </div></div>
+  <div class="container--n container" style="padding-top:24px;">
+    <div class="calc-card">
+      <div class="form-group"><label class="form-label" for="bT">إجمالي الفاتورة</label><input type="number" inputmode="decimal" class="form-input" id="bT" placeholder="250"></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label" for="bP">عدد الأشخاص</label><input type="number" inputmode="numeric" class="form-input" id="bP" placeholder="4" min="1" value="2"></div>
+        <div class="form-group"><label class="form-label" for="bTp">نسبة البقشيش (%)</label>
+          <select class="form-select" id="bTp">
+            <option value="0">0% — بدون</option>
+            <option value="10" selected>10%</option>
+            <option value="15">15%</option>
+            <option value="20">20%</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-full" onclick="calcBill()">قسّم الفاتورة ←</button>
+      <div class="result-card" id="bRes" aria-live="polite">
+        <div class="result-grid">
+          <div class="result-item"><div class="val" id="bPer">0</div><div class="lbl">نصيب كل شخص</div></div>
+          <div class="result-item"><div class="val" id="bTipA">0</div><div class="lbl">مبلغ البقشيش</div></div>
+          <div class="result-item"><div class="val" id="bGrand">0</div><div class="lbl">الإجمالي</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="info-section"><div class="info-card"><h2>🧾 عن أداة تقسيم الفاتورة</h2>
+<p>بعد وجبة رائعة مع الأصدقاء يأتي السؤال المعتاد: "كم نصيب كل واحد؟" هذه الأداة تحسب لك النصيب العادل في ثوانٍ.</p></div>
+<div class="info-card"><h2>💡 دليل البقشيش</h2>
+<ul><li>10% — خدمة مقبولة</li><li>15% — خدمة جيدة</li><li>20% — خدمة ممتازة</li>
+<li>بعض المطاعم تضيف رسوم خدمة تلقائياً — تحقق قبل إضافة بقشيش!</li></ul></div><div class="info-card" itemscope itemtype="https://schema.org/FAQPage"><h2>❓ أسئلة شائعة</h2><div class="faq-list"><div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa0" itemprop="name">كيف يُحسب البقشيش؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa0" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">البقشيش = الفاتورة × نسبة البقشيش / 100، ثم يُقسم بالتساوي.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa1" itemprop="name">ما النسبة المعتادة للبقشيش؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">الدول العربية: 10–15%. أمريكا: 15–20%. أوروبا: 5–10% أو بدون.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa2" itemprop="name">هل يمكن التقسيم غير المتساوي؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">الأداة تقسم بالتساوي. لتقسيم مخصص أدخل مبلغ كل شخص منفصلاً.</span></div></div>
+</div></div>
+</div>
+  </div>
+  <section class="related-section container--n container" aria-label="أدوات مشابهة"><div class="section-hd"><h2 class="section-title">أدوات مشابهة</h2><a href="/tools/" class="see-all">جميع الأدوات</a></div><div class="tools-grid"><a href="/tools/percentage-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">📊</div><div class="tool-name">حاسبة النسبة المئوية</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/age-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🎂</div><div class="tool-name">حساب العمر</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/zakat-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🌙</div><div class="tool-name">حاسبة الزكاة</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/currency-converter/" class="tool-card"><div class="tool-icon" aria-hidden="true">💱</div><div class="tool-name">تحويل العملات</div><div class="tool-arrow" aria-hidden="true">←</div></a></div></section>
+</main>
+
+<script is:inline>
+function fN(n){return new Intl.NumberFormat('ar-SA',{minimumFractionDigits:2,maximumFractionDigits:2}).format(n);}
+function calcBill(){
+  const tot=+document.getElementById('bT').value;
+  const ppl=+document.getElementById('bP').value||1;
+  const tipPct=+document.getElementById('bTp').value;
+  if(!tot)return;
+  const tip=tot*tipPct/100,grand=tot+tip,per=grand/ppl;
+  document.getElementById('bPer').textContent=fN(per);
+  document.getElementById('bTipA').textContent=fN(tip);
+  document.getElementById('bGrand').textContent=fN(grand);
+  document.getElementById('bRes').classList.add('show');
+}
+</script>
+
+</Layout>

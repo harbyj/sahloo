@@ -1,0 +1,87 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout
+  lang="en"
+  title="Unit Converter | Sahloo سهلو"
+  description="Free unit converter — length, weight, temperature, area, speed, and volume."
+  canonical="https://sahloo.com/en/tools/unit-converter/"
+>
+<main id="main" class="tool-page">
+  <div class="tool-hero"><div class="container--n container">
+    <nav class="breadcrumb" aria-label="breadcrumb"><a href="#" class="lang-switch">Home</a><span class="bc-sep" aria-hidden="true">›</span><a href="/en/tools/">Tools</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">Unit Converter</span></nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sahloo.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://sahloo.com/en/tools/"}, {"@type": "ListItem", "position": 3, "name": "Unit Converter"}]}</script>
+    <div class="tool-hero-content">
+      <div class="tool-page-icon" aria-hidden="true">📐</div>
+      <h1 class="tool-page-title">Unit Converter</h1>
+      <p class="tool-page-sub">Convert length, weight, temperature, and area</p>
+    </div>
+  </div></div>
+  <div class="container--n container" style="padding-top:24px;">
+    <div class="calc-card">
+      <div class="mode-tabs" role="tablist" style="flex-wrap:wrap;"><button class="mode-tab  active" onclick="setUT('length',this)">📏 Length</button><button class="mode-tab" onclick="setUT('weight',this)">⚖️ Weight</button><button class="mode-tab" onclick="setUT('temp',this)">🌡️ Temperature</button><button class="mode-tab" onclick="setUT('area',this)">📐 Area</button><button class="mode-tab" onclick="setUT('speed',this)">💨 Speed</button><button class="mode-tab" onclick="setUT('volume',this)">🫙 Volume</button></div>
+      <div class="form-group"><label class="form-label" for="uVal">Value</label><input type="number" inputmode="decimal" class="form-input" id="uVal" placeholder="1" oninput="convertUnit()"></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label" for="uFrom">From</label><select class="form-select" id="uFrom" onchange="convertUnit()"></select></div>
+        <div class="form-group"><label class="form-label" for="uTo">To</label><select class="form-select" id="uTo" onchange="convertUnit()"></select></div>
+      </div>
+      <div class="result-card show" id="uRes" aria-live="polite">
+        <div class="result-label">Result</div>
+        <div class="result-value" id="uVal2">Enter a value</div>
+        <div class="result-sub" id="uSub"></div>
+      </div>
+    </div>
+    <div class="info-section"><div class="info-card"><h2>📐 Supported Unit Types</h2>
+<ul><li><strong>Length:</strong> mm, cm, m, km, inch, foot, yard, mile</li>
+<li><strong>Weight:</strong> mg, g, kg, tonne, ounce, pound</li>
+<li><strong>Temperature:</strong> Celsius, Fahrenheit, Kelvin</li>
+<li><strong>Area:</strong> m², km², hectare, acre, ft²</li>
+<li><strong>Speed:</strong> km/h, mph, m/s, knot</li>
+<li><strong>Volume:</strong> ml, l, m³, fl oz, cup, gallon</li></ul></div><div class="info-card" itemscope itemtype="https://schema.org/FAQPage"><h2>❓ FAQ</h2><div class="faq-list"><div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa0" itemprop="name">How many meters in a mile?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa0" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">1 mile = 1,609.344 meters.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa1" itemprop="name">How to convert Celsius to Fahrenheit?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">°F = (°C × 9/5) + 32. Example: 25°C = 77°F.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa2" itemprop="name">How many kg in a pound?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">1 pound = 0.453592 kg. So 1 kg = 2.20462 pounds.</span></div></div>
+</div></div>
+</div>
+  </div>
+  <section class="related-section container--n container" aria-label="Related Tools"><div class="section-hd"><h2 class="section-title">Related Tools</h2><a href="/en/tools/" class="see-all">All Tools</a></div><div class="tools-grid"><a href="/en/tools/percentage-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">📊</div><div class="tool-name">Percentage Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/age-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🎂</div><div class="tool-name">Age Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/zakat-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🌙</div><div class="tool-name">Zakat Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/currency-converter/" class="tool-card"><div class="tool-icon" aria-hidden="true">💱</div><div class="tool-name">Currency Converter</div><div class="tool-arrow" aria-hidden="true">→</div></a></div></section>
+</main>
+
+<script is:inline>
+const UD={"length": {"units": [["mm", "Millimeter"], ["cm", "Centimeter"], ["m", "Meter"], ["km", "Kilometer"], ["in", "Inch"], ["ft", "Foot"], ["yd", "Yard"], ["mi", "Mile"]], "base": {"mm": 0.001, "cm": 0.01, "m": 1, "km": 1000, "in": 0.0254, "ft": 0.3048, "yd": 0.9144, "mi": 1609.344}}, "weight": {"units": [["mg", "Milligram"], ["g", "Gram"], ["kg", "Kilogram"], ["t", "Tonne"], ["oz", "Ounce"], ["lb", "Pound"]], "base": {"mg": 1e-06, "g": 0.001, "kg": 1, "t": 1000, "oz": 0.028349, "lb": 0.453592}}, "temp": {"units": [["c", "Celsius"], ["f", "Fahrenheit"], ["k", "Kelvin"]], "base": null}, "area": {"units": [["m2", "Sq Meter"], ["km2", "Sq Kilometer"], ["ha", "Hectare"], ["ac", "Acre"], ["ft2", "Sq Foot"]], "base": {"m2": 1, "km2": 1000000.0, "ha": 10000.0, "ac": 4046.86, "ft2": 0.0929}}, "speed": {"units": [["kmh", "km/h"], ["mph", "mph"], ["ms", "m/s"], ["kn", "Knot"]], "base": {"kmh": 1, "mph": 1.60934, "ms": 3.6, "kn": 1.852}}, "volume": {"units": [["ml", "Milliliter"], ["l", "Liter"], ["m3", "Cubic Meter"], ["floz", "Fl Oz"], ["cup", "Cup"], ["gal", "Gallon"]], "base": {"ml": 0.001, "l": 1, "m3": 1000, "floz": 0.029574, "cup": 0.236588, "gal": 3.78541}}};
+let _uMode='length';
+function setUT(mode,btn){
+  _uMode=mode;
+  document.querySelectorAll('.mode-tab').forEach((b,i)=>b.classList.toggle('active',b===btn));
+  populateSelects();
+  convertUnit();
+}
+function populateSelects(){
+  const d=UD[_uMode];
+  const mkOpts=(sel,selIdx)=>{
+    sel.innerHTML=d.units.map(([v,l],i)=>`<option value="${v}"${i===selIdx?' selected':''}>${l}</option>`).join('');
+  };
+  mkOpts(document.getElementById('uFrom'),0);
+  mkOpts(document.getElementById('uTo'),1);
+}
+function convertUnit(){
+  const val=+document.getElementById('uVal').value;
+  const fr=document.getElementById('uFrom').value;
+  const to=document.getElementById('uTo').value;
+  if(document.getElementById('uVal').value===''){document.getElementById('uVal2').textContent='Enter a value';return;}
+  let result;
+  if(_uMode==='temp'){
+    if(fr==='c')result=to==='f'?val*9/5+32:to==='k'?val+273.15:val;
+    else if(fr==='f'){const c=(val-32)*5/9;result=to==='c'?c:to==='k'?c+273.15:val;}
+    else{const c=val-273.15;result=to==='c'?c:to==='f'?c*9/5+32:val;}
+  }else{
+    const tb=UD[_uMode].base;
+    result=(val*tb[fr])/tb[to];
+  }
+  const fmt=Math.abs(result)>=0.001?new Intl.NumberFormat('en-US',{maximumFractionDigits:6}).format(result):result.toExponential(4);
+  document.getElementById('uVal2').textContent=fmt;
+  document.getElementById('uSub').textContent=new Intl.NumberFormat('en-US').format(val)+' '+fr+' = '+fmt+' '+to;
+}
+populateSelects();
+</script>
+
+</Layout>

@@ -1,0 +1,29 @@
+---
+interface Props { lang: 'ar' | 'en' }
+const { lang } = Astro.props;
+const p = lang === 'en' ? '/en' : '';   // path prefix
+const isAr = lang === 'ar';
+---
+<header class="site-header" role="banner">
+  <div class="container"><div class="header-inner">
+    <a href={`${p}/`} class="logo" aria-label="Sahloo Home">
+      <div class="logo-mark" aria-hidden="true">س</div>
+      <span class="logo-text">Sahloo<b>.</b></span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href={`${p}/`}                          class="nav-link">{isAr ? 'الرئيسية'    : 'Home'    }</a>
+      <a href={`${p}/tools/`}                    class="nav-link">{isAr ? 'جميع الأدوات' : 'All Tools'}</a>
+      <a href={`${p}/tools/zakat-calculator/`}   class="nav-link">{isAr ? 'الزكاة'      : 'Zakat'   }</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#" class="lang-switch lang-btn"
+         title={isAr ? 'English' : 'Arabic'}
+         aria-label={isAr ? 'Switch to English' : 'Switch to Arabic'}>
+        {isAr ? 'EN' : 'عربي'}
+      </a>
+      <button class="theme-btn" aria-label="Toggle theme">☀️</button>
+      <button class="hamburger-btn" aria-label={isAr ? 'فتح القائمة' : 'Toggle menu'}
+              aria-expanded="false" aria-controls="mDrawer">☰</button>
+    </div>
+  </div></div>
+</header>

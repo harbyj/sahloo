@@ -1,0 +1,51 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout
+  lang="en"
+  title="Contact Us | Sahloo سهلو"
+  description="Get in touch with the Sahloo team — report a bug, suggest a tool, or say hello!"
+  canonical="https://sahloo.com/en/contact/"
+>
+<main id="main">
+  <div class="page-hero"><div class="container">
+    <nav class="breadcrumb" aria-label="breadcrumb"><a href="#" class="lang-switch">Home</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">Contact Us</span></nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sahloo.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Contact Us"}]}</script>
+    <h1 style="margin-top:14px;">💬 Contact Us</h1>
+    <p>We'd love to hear from you.</p>
+  </div></div>
+  <div class="container" style="padding-bottom:64px;">
+    <div class="calc-card contact-form" style="max-width:580px;">
+      <div class="form-group"><label class="form-label" for="cName">Your Name</label><input type="text" class="form-input" id="cName" required autocomplete="name"></div>
+      <div class="form-group"><label class="form-label" for="cEmail">Email Address</label><input type="email" class="form-input" id="cEmail" required autocomplete="email"></div>
+      <div class="form-group"><label class="form-label" for="cSubj">Subject</label><select class="form-select" id="cSubj"><option>Bug Report</option><option>Feedback</option><option>Tool Request</option><option>Other</option></select></div>
+      <div class="form-group"><label class="form-label" for="cMsg">Message</label><textarea class="form-input" id="cMsg" rows="5" style="min-height:120px;resize:vertical;" required></textarea></div>
+      <button class="btn btn-primary btn-full" id="sendBtn">Send Message →</button>
+      <div class="success-msg" id="okMsg">✅ Message sent! We'll get back to you soon.</div>
+    </div>
+    <div class="calc-card" style="margin-top:24px;">
+    <h2 style="font-size:16px;font-weight:700;margin-bottom:12px;">📬 Other Ways to Reach Us</h2>
+    <ul class="footer-links">
+      <li>🐛 Found a bug? Use the Bug Report form above</li>
+      <li>💡 Have a tool idea? We love suggestions!</li>
+      <li>📧 Email: <a href="mailto:hello@sahloo.com">hello@sahloo.com</a></li>
+    </ul></div>
+  </div>
+</main>
+</Layout>
+
+    <script>
+      function sendMsg() {
+  const name = (document.getElementById('cName') as HTMLInputElement)?.value.trim();
+  const email = (document.getElementById('cEmail') as HTMLInputElement)?.value.trim();
+  const msg = (document.getElementById('cMsg') as HTMLTextAreaElement)?.value.trim();
+  const okMsg = document.getElementById('okMsg');
+
+  if (!name || !email || !msg || !okMsg) return;
+
+  okMsg.classList.add('show');
+  setTimeout(() => okMsg.classList.remove('show'), 5000);
+}
+
+document.getElementById('sendBtn')?.addEventListener('click', sendMsg);
+    </script>

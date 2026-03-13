@@ -1,0 +1,97 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  lang="ar"
+  title="المعدل التراكمي | Sahloo سهلو"
+  description="حاسبة المعدل التراكمي GPA المجانية — يدعم نظام 4.0 و5.0 والنظام المئوي."
+  canonical="https://sahloo.com/tools/gpa-calculator/"
+>
+<main id="main" class="tool-page">
+  <div class="tool-hero"><div class="container--n container">
+    <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">الرئيسية</a><span class="bc-sep" aria-hidden="true">›</span><a href="/tools/">الأدوات</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">المعدل التراكمي</span></nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://sahloo.com/"}, {"@type": "ListItem", "position": 2, "name": "الأدوات", "item": "https://sahloo.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "المعدل التراكمي"}]}</script>
+    <div class="tool-hero-content">
+      <div class="tool-page-icon" aria-hidden="true">🎓</div>
+      <h1 class="tool-page-title">المعدل التراكمي</h1>
+      <p class="tool-page-sub">احسب GPA بنظام 4.0 أو 5.0 أو المئوي</p>
+    </div>
+  </div></div>
+  <div class="container--n container" style="padding-top:24px;">
+    <div class="calc-card">
+      <div class="form-group"><label class="form-label" for="gSys">نظام الدرجات</label>
+        <select class="form-select" id="gSys" onchange="resetGPA()">
+          <option value="4">نظام 4.0 (أمريكي)</option>
+          <option value="5">نظام 5.0 (خليجي)</option>
+          <option value="100">النظام المئوي (100)</option>
+        </select>
+      </div>
+      <p class="form-label" style="margin-bottom:8px;">المواد</p>
+      <div id="courses"></div>
+      <button class="add-row-btn" onclick="addCourse()" style="margin:8px 0 16px;">＋ + إضافة مادة</button>
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="calcGPA()">احسب المعدل ←</button>
+        <button class="btn btn-secondary" onclick="resetGPA()">مسح الكل</button>
+      </div>
+      <div class="result-card" id="gRes" aria-live="polite">
+        <div class="result-label">معدلك التراكمي</div>
+        <div class="result-value" id="gVal">—</div>
+        <div class="result-sub"  id="gSub"></div>
+      </div>
+    </div>
+    <div class="info-section"><div class="info-card"><h2>🎓 أنظمة التقييم</h2>
+<ul><li><strong>نظام 4.0:</strong> معياري في أمريكا وكندا. A=4.0، B=3.0، C=2.0، D=1.0</li>
+<li><strong>نظام 5.0:</strong> شائع في السعودية ودول الخليج. A+=5.0، A=4.75</li>
+<li><strong>المئوي (100):</strong> يُستخدم في مصر والمغرب والأردن. 90–100 = امتياز</li></ul></div>
+<div class="info-card"><h2>💡 كيفية الاستخدام</h2>
+<ol class="steps-list"><li>اختر نظام درجات جامعتك</li>
+<li>أضف كل مادة مع درجتها وساعاتها</li>
+<li>اضغط احسب لمعرفة معدلك</li></ol></div><div class="info-card" itemscope itemtype="https://schema.org/FAQPage"><h2>❓ أسئلة شائعة</h2><div class="faq-list"><div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa0" itemprop="name">ما هو نظام 4.0؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa0" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">نظام 4.0 هو المعيار في الجامعات الأمريكية. A=4.0، B=3.0، C=2.0، D=1.0، F=0.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa1" itemprop="name">ما هو المعدل الجيد؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">على نظام 4.0: 3.5+ ممتاز، 3.0–3.5 جيد جداً، 2.5–3.0 جيد. المتطلبات تختلف حسب الجامعة.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa2" itemprop="name">كيف يُحسب المعدل؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">المعدل = مجموع (نقاط الدرجة × الساعات) / إجمالي الساعات. هذه الحاسبة تستخدم المتوسط الموزون.</span></div></div>
+</div></div>
+</div>
+  </div>
+  <section class="related-section container--n container" aria-label="أدوات مشابهة"><div class="section-hd"><h2 class="section-title">أدوات مشابهة</h2><a href="/tools/" class="see-all">جميع الأدوات</a></div><div class="tools-grid"><a href="/tools/percentage-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">📊</div><div class="tool-name">حاسبة النسبة المئوية</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/age-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🎂</div><div class="tool-name">حساب العمر</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/zakat-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🌙</div><div class="tool-name">حاسبة الزكاة</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/currency-converter/" class="tool-card"><div class="tool-icon" aria-hidden="true">💱</div><div class="tool-name">تحويل العملات</div><div class="tool-arrow" aria-hidden="true">←</div></a></div></section>
+</main>
+
+<script is:inline>
+const G4={"A+": 4, "A": 4, "A-": 3.7, "B+": 3.3, "B": 3, "B-": 2.7, "C+": 2.3, "C": 2, "C-": 1.7, "D+": 1.3, "D": 1, "F": 0},G5={"A+": 5, "A": 4.75, "A-": 4.5, "B+": 4.25, "B": 4, "B-": 3.75, "C+": 3.5, "C": 3, "C-": 2.75, "D+": 2.5, "D": 2, "F": 0};
+let cnt=0;
+function gradeOpts(sys){
+  if(sys==='100')return '<input type="number" inputmode="decimal" class="form-input" name="grade" placeholder="الدرجة (0-100)" min="0" max="100">';
+  const g=sys==='4'?G4:G5;
+  return '<select class="form-select" name="grade">'+Object.keys(g).map(k=>`<option>${k}</option>`).join('')+'</select>';
+}
+function addCourse(){
+  cnt++;
+  const sys=document.getElementById('gSys').value;
+  const row=document.createElement('div');
+  row.className='course-row'; row.id='cr'+cnt;
+  row.innerHTML=gradeOpts(sys)+'<input type="number" inputmode="numeric" class="form-input" name="hrs" placeholder="ساعات" min="1" max="6" value="3"><button class="rm-btn" onclick="this.parentElement.remove()" aria-label="remove">×</button>';
+  document.getElementById('courses').appendChild(row);
+}
+function resetGPA(){document.getElementById('courses').innerHTML='';cnt=0;addCourse();addCourse();document.getElementById('gRes').classList.remove('show');}
+function calcGPA(){
+  const sys=document.getElementById('gSys').value;
+  const rows=document.querySelectorAll('#courses .course-row');
+  let pts=0,hrs=0;
+  rows.forEach(row=>{
+    const g=row.querySelector('[name="grade"]');
+    const h=+row.querySelector('[name="hrs"]').value||0;
+    let p=sys==='100'?+g.value||0:(sys==='4'?G4[g.value]:G5[g.value])||0;
+    pts+=p*h; hrs+=h;
+  });
+  if(!hrs)return;
+  const gpa=pts/hrs;
+  const maxG=sys==='100'?100:+sys;
+  const pct=gpa/maxG*100;
+  const cat=pct>=90?'امتياز 🏆':pct>=80?'جيد جداً ⭐':pct>=70?'جيد ✅':pct>=60?'مقبول':'راسب ❌';
+  document.getElementById('gVal').textContent=gpa.toFixed(2)+' / '+maxG;
+  document.getElementById('gSub').textContent='التقدير: '+cat+' | الساعات: '+hrs;
+  document.getElementById('gRes').classList.add('show');
+}
+resetGPA();
+</script>
+
+</Layout>

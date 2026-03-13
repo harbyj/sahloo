@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  lang="ar"
+  title="تواصل معنا | Sahloo سهلو"
+  description="تواصل مع فريق سهلو — أبلغ عن خطأ، اقترح أداة، أو قل مرحباً!"
+  canonical="https://sahloo.com/contact/"
+>
+<main id="main">
+  <div class="page-hero"><div class="container">
+    <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">الرئيسية</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">تواصل معنا</span></nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://sahloo.com/"}, {"@type": "ListItem", "position": 2, "name": "تواصل معنا"}]}</script>
+    <h1 style="margin-top:14px;">💬 تواصل معنا</h1>
+    <p>يسعدنا سماع رأيك.</p>
+  </div></div>
+  <div class="container" style="padding-bottom:64px;">
+    <div class="calc-card contact-form" style="max-width:580px;">
+      <div class="form-group"><label class="form-label" for="cName">اسمك</label><input type="text" class="form-input" id="cName" required autocomplete="name"></div>
+      <div class="form-group"><label class="form-label" for="cEmail">البريد الإلكتروني</label><input type="email" class="form-input" id="cEmail" required autocomplete="email"></div>
+      <div class="form-group"><label class="form-label" for="cSubj">الموضوع</label><select class="form-select" id="cSubj"><option>الإبلاغ عن خطأ</option><option>ملاحظة</option><option>طلب أداة جديدة</option><option>أخرى</option></select></div>
+      <div class="form-group"><label class="form-label" for="cMsg">الرسالة</label><textarea class="form-input" id="cMsg" rows="5" style="min-height:120px;resize:vertical;" required></textarea></div>
+      <button class="btn btn-primary btn-full" id="sendBtn">إرسال الرسالة ←</button>
+      <div class="success-msg" id="okMsg">✅ تم الإرسال! سنرد عليك قريباً.</div>
+    </div>
+    <div class="calc-card" style="margin-top:24px;">
+    <h2 style="font-size:16px;font-weight:700;margin-bottom:12px;">📬 طرق التواصل الأخرى</h2>
+    <ul class="footer-links">
+      <li>🐛 وجدت خطأ؟ استخدم نموذج الإبلاغ عن خطأ أعلاه</li>
+      <li>💡 عندك فكرة أداة؟ نحب الاقتراحات!</li>
+      <li>📧 البريد: <a href="mailto:hello@sahloo.com">hello@sahloo.com</a></li>
+    </ul></div>
+  </div>
+</main>
+</Layout>
+
+    <script>
+      function sendMsg() {
+  const name = (document.getElementById('cName') as HTMLInputElement)?.value.trim();
+  const email = (document.getElementById('cEmail') as HTMLInputElement)?.value.trim();
+  const msg = (document.getElementById('cMsg') as HTMLTextAreaElement)?.value.trim();
+  const okMsg = document.getElementById('okMsg');
+
+  if (!name || !email || !msg || !okMsg) return;
+
+  okMsg.classList.add('show');
+  setTimeout(() => okMsg.classList.remove('show'), 5000);
+}
+
+document.getElementById('sendBtn')?.addEventListener('click', sendMsg);
+    </script>

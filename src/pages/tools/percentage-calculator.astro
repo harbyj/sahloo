@@ -1,0 +1,108 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  lang="ar"
+  title="حاسبة النسبة المئوية | Sahloo سهلو"
+  description="حاسبة النسبة المئوية المجانية — نسبة عدد من آخر، زيادة أو نقص بنسبة مئوية."
+  canonical="https://sahloo.com/tools/percentage-calculator/"
+>
+<main id="main" class="tool-page">
+  <div class="tool-hero">
+    <div class="container--n container">
+      <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">الرئيسية</a><span class="bc-sep" aria-hidden="true">›</span><a href="/tools/">الأدوات</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">حاسبة النسبة المئوية</span></nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://sahloo.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://sahloo.com/tools/"}, {"@type": "ListItem", "position": 3, "name": "حاسبة النسبة المئوية"}]}</script>
+      <div class="tool-hero-content">
+        <div class="tool-page-icon" aria-hidden="true">📊</div>
+        <h1 class="tool-page-title">حاسبة النسبة المئوية</h1>
+        <p class="tool-page-sub">احسب النسب المئوية — نسبة من عدد، زيادة، نقصان</p>
+      </div>
+    </div>
+  </div>
+  <div class="container--n container" style="padding-top:24px;">
+    <div class="calc-card">
+      <div class="mode-tabs" role="tablist">
+        <button class="mode-tab active" role="tab" aria-selected="true"  onclick="setMode(0,this)">ما هو X% من Y؟</button>
+        <button class="mode-tab"        role="tab" aria-selected="false" onclick="setMode(1,this)">X هو كم % من Y؟</button>
+        <button class="mode-tab"        role="tab" aria-selected="false" onclick="setMode(2,this)">تغيير النسبة</button>
+      </div>
+      <div id="mode0" role="tabpanel">
+        <div class="form-row">
+          <div class="form-group"><label class="form-label" for="p0a">النسبة (%)</label><input class="form-input" id="p0a" type="number" inputmode="decimal" placeholder="20" aria-label="النسبة (%)"></div>
+          <div class="form-group"><label class="form-label" for="p0b">من العدد</label><input class="form-input" id="p0b" type="number" inputmode="decimal" placeholder="500" aria-label="من العدد"></div>
+        </div>
+        <button class="btn btn-primary btn-full" onclick="calcP(0)">احسب ←</button>
+      </div>
+      <div id="mode1" role="tabpanel" hidden>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label" for="p1a">العدد الأول (X)</label><input class="form-input" id="p1a" type="number" inputmode="decimal" placeholder="80"></div>
+          <div class="form-group"><label class="form-label" for="p1b">العدد الثاني (Y)</label><input class="form-input" id="p1b" type="number" inputmode="decimal" placeholder="200"></div>
+        </div>
+        <button class="btn btn-primary btn-full" onclick="calcP(1)">احسب ←</button>
+      </div>
+      <div id="mode2" role="tabpanel" hidden>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label" for="p2a">القيمة الأصلية</label><input class="form-input" id="p2a" type="number" inputmode="decimal" placeholder="1000"></div>
+          <div class="form-group"><label class="form-label" for="p2b">نسبة التغيير (%)</label><input class="form-input" id="p2b" type="number" inputmode="decimal" placeholder="15"></div>
+        </div>
+        <p class="form-hint">ضع سالب للنقصان</p>
+        <button class="btn btn-primary btn-full" onclick="calcP(2)" style="margin-top:10px;">احسب ←</button>
+      </div>
+      <div class="result-card" id="pctRes" aria-live="polite" aria-atomic="true">
+        <div class="result-label" id="pctLbl">النتيجة</div>
+        <div class="result-value" id="pctVal">—</div>
+        <div class="result-sub"   id="pctSub"></div>
+      </div>
+    </div>
+    <div class="info-section"><div class="info-card"><h2>📌 ما هي النسبة المئوية؟</h2>
+<p>النسبة المئوية هي طريقة للتعبير عن عدد كجزء من مئة. يُرمز لها بـ "%" وتعني "من كل مئة". تُستخدم يومياً في الخصومات والضرائب والدرجات الدراسية.</p>
+<p>المعادلة: <strong>النسبة = (الجزء ÷ الكل) × 100</strong></p></div>
+<div class="info-card"><h2>🧮 كيفية الاستخدام</h2>
+<ol class="steps-list"><li>اختر نوع الحساب من الأزرار أعلاه.</li><li>أدخل الأرقام في الحقول المطلوبة.</li><li>اضغط احسب للحصول على النتيجة فوراً.</li></ol></div>
+<div class="info-card"><h2>💡 أمثلة عملية</h2>
+<ul><li><strong>خصم تسوق:</strong> منتج بـ200 ريال وخصم 15% → توفر 30 ريال، تدفع 170</li>
+<li><strong>درجة اختبار:</strong> 45 صح من 60 → نسبة 75%</li>
+<li><strong>ضريبة القيمة المضافة:</strong> 1000 ريال + 15% = 1150 ريال</li>
+<li><strong>زيادة راتب:</strong> 5000 ريال + زيادة 10% = 5500 ريال</li></ul></div><div class="info-card" itemscope itemtype="https://schema.org/FAQPage"><h2>❓ أسئلة شائعة</h2><div class="faq-list"><div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa0" itemprop="name">كيف أحسب 20% من 150؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa0" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">20% من 150 = 0.20 × 150 = 30.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa1" itemprop="name">كيف أحسب نسبة الزيادة؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">نسبة الزيادة = ((الجديد − القديم) / القديم) × 100. مثال: من 100 إلى 120 = زيادة 20%.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa2" itemprop="name">ما هي معادلة النسبة المئوية؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">النسبة = (الجزء / الكل) × 100. مثال: 45 من 60 = 75%.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa3" itemprop="name">كيف أحسب النسبة العكسية؟<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">إذا كان السعر بعد خصم 20% هو 80، فالأصلي = 80 ÷ 0.80 = 100.</span></div></div>
+</div></div>
+</div>
+  </div>
+  <section class="related-section container--n container" aria-label="أدوات مشابهة"><div class="section-hd"><h2 class="section-title">أدوات مشابهة</h2><a href="/tools/" class="see-all">جميع الأدوات</a></div><div class="tools-grid"><a href="/tools/age-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🎂</div><div class="tool-name">حساب العمر</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/zakat-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🌙</div><div class="tool-name">حاسبة الزكاة</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/currency-converter/" class="tool-card"><div class="tool-icon" aria-hidden="true">💱</div><div class="tool-name">تحويل العملات</div><div class="tool-arrow" aria-hidden="true">←</div></a><a href="/tools/loan-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🏦</div><div class="tool-name">حاسبة القروض</div><div class="tool-arrow" aria-hidden="true">←</div></a></div></section>
+</main>
+
+<script is:inline>
+let _m=0;
+function setMode(m,btn){
+  _m=m;
+  ['mode0','mode1','mode2'].forEach((id,i)=>{const el=document.getElementById(id);if(el){el.hidden=i!==m;}});
+  document.querySelectorAll('.mode-tab').forEach((b,i)=>{b.classList.toggle('active',i===m);b.setAttribute('aria-selected',i===m);});
+  document.getElementById('pctRes').classList.remove('show');
+}
+function fN(n){return new Intl.NumberFormat('ar-SA',{maximumFractionDigits:4}).format(n);}
+function calcP(m){
+  let val,sub='';
+  if(m===0){
+    const p=+document.getElementById('p0a').value,n=+document.getElementById('p0b').value;
+    if(!p||!n)return;
+    val=(p/100)*n;sub=p+'% × '+fN(n)+'='+fN(val);
+  }else if(m===1){
+    const x=+document.getElementById('p1a').value,y=+document.getElementById('p1b').value;
+    if(!x||!y)return;
+    val=(x/y)*100;sub=fN(x)+' / '+fN(y)+' × 100';
+  }else{
+    const o=+document.getElementById('p2a').value,p=+document.getElementById('p2b').value;
+    if(!o)return;
+    val=o*(1+p/100);
+    const chg=Math.abs(o*p/100);
+    sub=(p>=0?'زيادة ':'نقصان ')+fN(chg);
+  }
+  document.getElementById('pctVal').textContent=fN(val)+(m===1?'%':'');
+  document.getElementById('pctSub').textContent=sub;
+  document.getElementById('pctRes').classList.add('show');
+}
+</script>
+
+</Layout>

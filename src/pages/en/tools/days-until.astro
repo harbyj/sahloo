@@ -1,0 +1,69 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout
+  lang="en"
+  title="Days Until | Sahloo سهلو"
+  description="Free countdown calculator — find how many days until any event, date, or occasion."
+  canonical="https://sahloo.com/en/tools/days-until/"
+>
+<main id="main" class="tool-page">
+  <div class="tool-hero"><div class="container--n container">
+    <nav class="breadcrumb" aria-label="breadcrumb"><a href="#" class="lang-switch">Home</a><span class="bc-sep" aria-hidden="true">›</span><a href="/en/tools/">Tools</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">Days Until</span></nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sahloo.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://sahloo.com/en/tools/"}, {"@type": "ListItem", "position": 3, "name": "Days Until"}]}</script>
+    <div class="tool-hero-content">
+      <div class="tool-page-icon" aria-hidden="true">⏳</div>
+      <h1 class="tool-page-title">Days Until</h1>
+      <p class="tool-page-sub">Count down to any event or date</p>
+    </div>
+  </div></div>
+  <div class="container--n container" style="padding-top:24px;">
+    <div class="calc-card">
+      <div class="form-group"><label class="form-label" for="evName">Event name (optional)</label><input type="text" class="form-input" id="evName" placeholder="e.g. My Birthday"></div>
+      <div class="form-group"><label class="form-label" for="evDate">Event date</label><input type="date" class="form-input" id="evDate"></div>
+      <button class="btn btn-primary btn-full" onclick="calcDays()">Count Down →</button>
+      <div class="result-card" id="dRes" aria-live="polite">
+        <div class="result-label" id="dLbl">Days until event</div>
+        <div class="result-value" id="dVal">—</div>
+        <div class="result-grid" id="dGrid" style="margin-top:14px;"></div>
+        <div class="result-sub"  id="dSub"></div>
+      </div>
+    </div>
+    <div class="calc-card">
+      <p class="form-label" style="margin-bottom:12px;">⚡ Quick Events</p>
+      <div class="cats-row"><button class="cat-chip" onclick="quickEv('New Year 2026','2026-01-01')">New Year 2026</button><button class="cat-chip" onclick="quickEv('Eid al-Fitr','2025-03-30')">Eid al-Fitr</button><button class="cat-chip" onclick="quickEv('Saudi National Day','2025-09-23')">Saudi National Day</button><button class="cat-chip" onclick="quickEv('World Cup 2026','2026-06-11')">World Cup 2026</button></div>
+    </div>
+    <div class="info-section"><div class="info-card"><h2>⏳ Uses of the Countdown Calculator</h2>
+<ul><li>Days until your annual vacation</li><li>Countdown to a birthday or anniversary</li>
+<li>Days remaining until exams or project deadlines</li><li>How long ago an important event happened</li>
+<li>Counting down to a trip, wedding, or celebration</li></ul></div><div class="info-card" itemscope itemtype="https://schema.org/FAQPage"><h2>❓ FAQ</h2><div class="faq-list"><div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa0" itemprop="name">Can I count days in the past?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa0" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">Yes — the calculator shows elapsed days if the date has already passed.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa1" itemprop="name">How do I count business days only?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">This tool counts calendar days. For business days, subtract weekends from the total.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa2" itemprop="name">What is the maximum countdown?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">The calculator supports any future date — even years or decades away.</span></div></div>
+</div></div>
+</div>
+  </div>
+  <section class="related-section container--n container" aria-label="Related Tools"><div class="section-hd"><h2 class="section-title">Related Tools</h2><a href="/en/tools/" class="see-all">All Tools</a></div><div class="tools-grid"><a href="/en/tools/percentage-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">📊</div><div class="tool-name">Percentage Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/age-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🎂</div><div class="tool-name">Age Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/zakat-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🌙</div><div class="tool-name">Zakat Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/currency-converter/" class="tool-card"><div class="tool-icon" aria-hidden="true">💱</div><div class="tool-name">Currency Converter</div><div class="tool-arrow" aria-hidden="true">→</div></a></div></section>
+</main>
+
+<script is:inline>
+function calcDays(nameOv,dateOv){
+  const name=nameOv||document.getElementById('evName').value||'Event';
+  const dateVal=dateOv||document.getElementById('evDate').value;
+  if(!dateVal)return;
+  if(nameOv){document.getElementById('evName').value=nameOv;document.getElementById('evDate').value=dateOv;}
+  const tgt=new Date(dateVal);tgt.setHours(0,0,0,0);
+  const now=new Date();now.setHours(0,0,0,0);
+  const diff=tgt-now;
+  const days=Math.round(diff/86400000);
+  const abs=Math.abs(days);
+  const fmt=n=>new Intl.NumberFormat('en-US').format(n);
+  document.getElementById('dLbl').textContent=days>0?'Days until '+name:days<0?'Days since '+name:'🎉 Today is the day!';
+  document.getElementById('dVal').textContent=fmt(abs)+' days'+(days<0?' ✓':'');
+  document.getElementById('dGrid').innerHTML='<div class="result-item"><div class="val">'+fmt(abs)+'</div><div class="lbl">Days</div></div><div class="result-item"><div class="val">'+fmt(Math.floor(abs/7))+'</div><div class="lbl">Weeks</div></div><div class="result-item"><div class="val">'+fmt(Math.floor(abs/30.44))+'</div><div class="lbl">Months</div></div>';
+  document.getElementById('dSub').textContent=tgt.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  document.getElementById('dRes').classList.add('show');
+}
+function quickEv(n,d){calcDays(n,d);}
+</script>
+
+</Layout>

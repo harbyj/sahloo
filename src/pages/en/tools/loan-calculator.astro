@@ -1,0 +1,78 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout
+  lang="en"
+  title="Loan Calculator | Sahloo سهلو"
+  description="Free loan calculator — compute monthly payment, total amount, and total interest for any loan."
+  canonical="https://sahloo.com/en/tools/loan-calculator/"
+>
+<main id="main" class="tool-page">
+  <div class="tool-hero">
+    <div class="container--n container">
+      <nav class="breadcrumb" aria-label="breadcrumb"><a href="#" class="lang-switch">Home</a><span class="bc-sep" aria-hidden="true">›</span><a href="/en/tools/">Tools</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">Loan Calculator</span></nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sahloo.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://sahloo.com/en/tools/"}, {"@type": "ListItem", "position": 3, "name": "Loan Calculator"}]}</script>
+      <div class="tool-hero-content">
+        <div class="tool-page-icon" aria-hidden="true">🏦</div>
+        <h1 class="tool-page-title">Loan Calculator</h1>
+        <p class="tool-page-sub">Calculate monthly payment and total interest</p>
+      </div>
+    </div>
+  </div>
+  <div class="container--n container" style="padding-top:24px;">
+    <div class="calc-card">
+      <div class="form-group"><label class="form-label" for="lAmt">Loan Amount</label><input type="number" inputmode="decimal" class="form-input" id="lAmt" placeholder="100000"></div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label" for="lRate">Annual Interest Rate (%)</label><input type="number" inputmode="decimal" class="form-input" id="lRate" placeholder="5.5" step="0.1"></div>
+        <div class="form-group"><label class="form-label" for="lTerm">Loan Term</label><input type="number" inputmode="numeric" class="form-input" id="lTerm" placeholder="5"></div>
+      </div>
+      <div class="form-group"><label class="form-label" for="lUnit">Term Unit</label>
+        <select class="form-select" id="lUnit"><option value="years">Years</option><option value="months">Months</option></select>
+      </div>
+      <button class="btn btn-primary btn-full" onclick="calcLoan()">Calculate Payment →</button>
+      <div class="result-card" id="lRes" aria-live="polite">
+        <div class="result-grid">
+          <div class="result-item"><div class="val" id="lM">0</div><div class="lbl">Monthly Payment</div></div>
+          <div class="result-item"><div class="val" id="lT">0</div><div class="lbl">Total Amount</div></div>
+          <div class="result-item"><div class="val" id="lI">0</div><div class="lbl">Total Interest</div></div>
+        </div>
+        <div class="result-sub" id="lSub"></div>
+      </div>
+    </div>
+    <div class="info-section"><div class="info-card"><h2>🏦 How Loan Payments Work</h2>
+<p>Loans use <strong>amortization</strong> — each monthly payment covers both interest and principal. Early payments are mostly interest; later ones are mostly principal. The formula ensures equal payments throughout the loan term.</p>
+<p>Formula: <strong>PMT = P × [r(1+r)ⁿ] / [(1+r)ⁿ−1]</strong></p></div>
+<div class="info-card"><h2>💡 Smart Borrowing Tips</h2>
+<ul><li>The shorter the loan term, the less total interest you pay</li>
+<li>Aim for monthly payments under 30% of your income</li>
+<li>Compare offers from multiple lenders before signing</li>
+<li>Watch for admin fees and early repayment penalties</li></ul></div><div class="info-card" itemscope itemtype="https://schema.org/FAQPage"><h2>❓ FAQ</h2><div class="faq-list"><div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa0" itemprop="name">What is the monthly payment formula?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa0" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">Monthly payment = P × [r(1+r)^n] / [(1+r)^n − 1], where P=principal, r=monthly rate, n=number of payments.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa1" itemprop="name">Does this include Islamic (Shariah) financing?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">This calculator uses a standard amortization formula. Islamic products like Murabaha or Ijara have different structures — consult your bank for exact figures.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa2" itemprop="name">How can I reduce total interest paid?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">Make extra payments toward the principal, choose a shorter loan term, or negotiate a lower interest rate.</span></div></div>
+</div></div>
+</div>
+  </div>
+  <section class="related-section container--n container" aria-label="Related Tools"><div class="section-hd"><h2 class="section-title">Related Tools</h2><a href="/en/tools/" class="see-all">All Tools</a></div><div class="tools-grid"><a href="/en/tools/percentage-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">📊</div><div class="tool-name">Percentage Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/age-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🎂</div><div class="tool-name">Age Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/zakat-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🌙</div><div class="tool-name">Zakat Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/currency-converter/" class="tool-card"><div class="tool-icon" aria-hidden="true">💱</div><div class="tool-name">Currency Converter</div><div class="tool-arrow" aria-hidden="true">→</div></a></div></section>
+</main>
+
+<script is:inline>
+function fN(n){return new Intl.NumberFormat('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}).format(n);}
+function calcLoan(){
+  const P=+document.getElementById('lAmt').value;
+  const ar=+document.getElementById('lRate').value;
+  const term=+document.getElementById('lTerm').value;
+  const unit=document.getElementById('lUnit').value;
+  if(!P||!ar||!term)return;
+  const n=unit==='years'?term*12:term;
+  const r=ar/100/12;
+  const m=r===0?P/n:P*(r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);
+  const tot=m*n; const int_=tot-P;
+  document.getElementById('lM').textContent=fN(m);
+  document.getElementById('lT').textContent=fN(tot);
+  document.getElementById('lI').textContent=fN(int_);
+  document.getElementById('lSub').textContent='Principal: '+fN(P)+' | '+n+' payments | Interest ratio: '+(int_/tot*100).toFixed(1)+'%';
+  document.getElementById('lRes').classList.add('show');
+}
+</script>
+
+</Layout>

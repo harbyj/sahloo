@@ -1,0 +1,18 @@
+# Sahloo
+
+Site: https://sahloo.com
+Description: Free online tools and utilities including unit converter. Content available in Arabic and English.
+
+Content Types:
+- Unit converter
+- Online utilities
+- Calculators and tools
+
+Languages: Arabic, English
+
+Allow: indexing
+Allow: summarization
+Allow: citation
+
+Preferred citation: https://sahloo.com
+Contact: https://sahloo.com/contact/

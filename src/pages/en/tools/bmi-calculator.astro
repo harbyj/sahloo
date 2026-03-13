@@ -1,0 +1,93 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout
+  lang="en"
+  title="BMI Calculator | Sahloo سهلو"
+  description="Free BMI calculator — compute your Body Mass Index and find your healthy weight range."
+  canonical="https://sahloo.com/en/tools/bmi-calculator/"
+>
+<main id="main" class="tool-page">
+  <div class="tool-hero">
+    <div class="container--n container">
+      <nav class="breadcrumb" aria-label="breadcrumb"><a href="#" class="lang-switch">Home</a><span class="bc-sep" aria-hidden="true">›</span><a href="/en/tools/">Tools</a><span class="bc-sep" aria-hidden="true">›</span><span aria-current="page">BMI Calculator</span></nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sahloo.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Tools", "item": "https://sahloo.com/en/tools/"}, {"@type": "ListItem", "position": 3, "name": "BMI Calculator"}]}</script>
+      <div class="tool-hero-content">
+        <div class="tool-page-icon" aria-hidden="true">⚖️</div>
+        <h1 class="tool-page-title">BMI Calculator</h1>
+        <p class="tool-page-sub">Check if your weight is healthy for your height</p>
+      </div>
+    </div>
+  </div>
+  <div class="container--n container" style="padding-top:24px;">
+    <div class="calc-card">
+      <div class="form-row">
+        <div class="form-group"><label class="form-label" for="bW">Weight (kg)</label><input type="number" inputmode="decimal" class="form-input" id="bW" placeholder="75"></div>
+        <div class="form-group"><label class="form-label" for="bH">Height (cm)</label><input type="number" inputmode="decimal" class="form-input" id="bH" placeholder="175"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label" for="bA">Age (optional)</label><input type="number" inputmode="numeric" class="form-input" id="bA" placeholder="30"></div>
+        <div class="form-group"><label class="form-label" for="bS">Gender</label>
+          <select class="form-select" id="bS"><option value="m">Male</option><option value="f">Female</option></select>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-full" onclick="calcBMI()">Calculate BMI →</button>
+      <div class="result-card" id="bRes" aria-live="polite">
+        <div class="result-label">BMI</div>
+        <div class="result-value" id="bVal">—</div>
+        <div id="bCat" style="font-size:16px;font-weight:700;margin-top:6px;"></div>
+        <div style="margin-top:14px;background:var(--surface);border-radius:var(--radius);padding:12px;">
+          <div style="display:flex;border-radius:6px;overflow:hidden;height:12px;">
+            <div style="flex:1;background:#3b82f6;"></div>
+            <div style="flex:2;background:#22c55e;"></div>
+            <div style="flex:1.5;background:#f59e0b;"></div>
+            <div style="flex:2;background:#ef4444;"></div>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-muted);margin-top:5px;">
+            <span>Under&lt;18.5</span><span>Normal</span><span>Over</span><span>&gt;30 Obese</span>
+          </div>
+        </div>
+        <div class="result-sub" id="bSub"></div>
+      </div>
+    </div>
+    <div class="info-section"><div class="info-card"><h2>⚖️ What is BMI?</h2>
+<p>Body Mass Index (BMI) is a simple screening tool using weight and height to estimate body fat levels. It's widely used as a first-step health assessment — not a diagnostic tool.</p>
+<p>Formula: <strong>BMI = weight(kg) ÷ height²(m)</strong></p></div>
+<div class="info-card"><h2>📊 BMI Categories</h2>
+<ul><li><strong>Under 18.5:</strong> Underweight — consult a nutritionist</li>
+<li><strong>18.5–24.9:</strong> Normal weight ✅</li>
+<li><strong>25–29.9:</strong> Overweight — consider diet and exercise adjustments</li>
+<li><strong>30–34.9:</strong> Obese Class I</li>
+<li><strong>35+:</strong> Obese Class II/III — medical consultation recommended</li></ul></div>
+<div class="info-card"><h2>⚠️ Limitations of BMI</h2>
+<p>BMI is a screening tool, not a diagnosis. It may be inaccurate for: athletes (muscle weighs more than fat), elderly people (muscle loss), pregnant women, and children. Always consult your doctor for a full health assessment.</p></div><div class="info-card" itemscope itemtype="https://schema.org/FAQPage"><h2>❓ FAQ</h2><div class="faq-list"><div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa0" itemprop="name">What is a healthy BMI range?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa0" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">A BMI of 18.5–24.9 is considered healthy for most adults. Below 18.5 = underweight; 25–29.9 = overweight; 30+ = obese.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa1" itemprop="name">Is BMI accurate for athletes?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">No — BMI does not distinguish between muscle and fat. Athletes may have a high BMI due to muscle mass while being perfectly healthy.</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa2" itemprop="name">What is the BMI formula?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">BMI = weight (kg) ÷ height² (m). Example: 70kg ÷ (1.75)² = 70 ÷ 3.0625 = 22.9</span></div></div>
+<div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question"><button class="faq-q" aria-expanded="false" aria-controls="fa3" itemprop="name">Should children use this BMI calculator?<span class="faq-arrow" aria-hidden="true">▼</span></button><div class="faq-a" id="fa3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer"><span itemprop="text">This calculator is designed for adults. Children and teenagers use age- and gender-specific BMI percentiles.</span></div></div>
+</div></div>
+</div>
+  </div>
+  <section class="related-section container--n container" aria-label="Related Tools"><div class="section-hd"><h2 class="section-title">Related Tools</h2><a href="/en/tools/" class="see-all">All Tools</a></div><div class="tools-grid"><a href="/en/tools/percentage-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">📊</div><div class="tool-name">Percentage Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/age-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🎂</div><div class="tool-name">Age Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/zakat-calculator/" class="tool-card"><div class="tool-icon" aria-hidden="true">🌙</div><div class="tool-name">Zakat Calculator</div><div class="tool-arrow" aria-hidden="true">→</div></a><a href="/en/tools/currency-converter/" class="tool-card"><div class="tool-icon" aria-hidden="true">💱</div><div class="tool-name">Currency Converter</div><div class="tool-arrow" aria-hidden="true">→</div></a></div></section>
+</main>
+
+<script is:inline>
+function calcBMI(){
+  const w=+document.getElementById('bW').value,h=+document.getElementById('bH').value;
+  if(!w||!h)return;
+  const hm=h/100,bmi=w/(hm*hm);
+  const minW=(18.5*hm*hm).toFixed(1),maxW=(24.9*hm*hm).toFixed(1);
+  let cat,col;
+  if(bmi<18.5)     {cat='Underweight 🔵';col='#3b82f6';}
+  else if(bmi<25)  {cat='Normal Weight ✅';col='#22c55e';}
+  else if(bmi<30)  {cat='Overweight 🟡';col='#f59e0b';}
+  else if(bmi<35)  {cat='Obese Class I 🔴';col='#ef4444';}
+  else             {cat='Obese Class II+ 🔴';col='#dc2626';}
+  document.getElementById('bVal').textContent=bmi.toFixed(1);
+  document.getElementById('bCat').style.color=col;
+  document.getElementById('bCat').textContent=cat;
+  document.getElementById('bSub').textContent='Healthy weight range: '+minW+' – '+maxW+' kg';
+  document.getElementById('bRes').classList.add('show');
+}
+</script>
+
+</Layout>
