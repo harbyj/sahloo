@@ -87,6 +87,15 @@ const altHref  = lang === 'ar'
       document.documentElement.setAttribute('data-theme', t);
     })();
   </script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7RMB7SNXSE"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7RMB7SNXSE');
+</script>
 </head>
 <body class={lang}>
   <a class="skip-link" href="#main">{lang === 'ar' ? 'تخطى إلى المحتوى' : 'Skip to content'}</a>
